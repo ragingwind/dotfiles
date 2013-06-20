@@ -3,9 +3,6 @@
 # https://github.com/sindresorhus/pure
 # MIT License
 
-# Change this to your own username
-DEFAULT_USERNAME='ragingwind'
-
 # For my own and others sanity
 # git:
 # %b => current branch
@@ -27,8 +24,11 @@ zstyle ':vcs_info:git*' actionformats ' [%b|%a]'
 # enable prompt substitution
 setopt PROMPT_SUBST
 
+# can be handy to measure time with accuracy
+typeset -F SECONDS=0
+
 # Only show username if not default
-[ $USER != $DEFAULT_USERNAME ] && local username='%n@%m'
+local username='%n@%m'
 
 # Fastest possible way to check if repo is dirty
 git_dirty() {
@@ -53,8 +53,9 @@ precmd() {
   # Check status of virsion control
   vcs_info
   # Add `%*` to display the time
-  print -P '\n%F{blue}%~%F{yellow}$vcs_info_msg_0_`git_dirty`%f $username%f %F{cyan}`cmd_exec_time`%f'
+  print -P '\n%F{blue}%~%F{yellow}$vcs_info_msg_0_`git_dirty`%f %F{white}$username%f %F{cyan}`cmd_exec_time`%f'
   # Reset value since `preexec` isn't always triggered
+  SECONDS=0
 }
 
 # Prompt turns red if the previous command didn't exit with 0

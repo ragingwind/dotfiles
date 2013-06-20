@@ -1,3 +1,15 @@
+# ZSH
+alias reload!='source ~/.zshrc'
+alias re!='reload!'
+
+# IP ADDRESSES
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
+# ENHANCED WHOIS LOOKUPS
+alias whois="whois -h whois-servers.net"
+
 # SHOW HISTORY
 alias history='fc -l 1'
 
@@ -21,25 +33,9 @@ alias 7='cd +7'
 alias 8='cd +8'
 alias 9='cd +9'
 
-cd () {
-  if   [[ "x$*" == "x..." ]]; then
-    cd ../..
-  elif [[ "x$*" == "x...." ]]; then
-    cd ../../..
-  elif [[ "x$*" == "x....." ]]; then
-    cd ../../../..
-  elif [[ "x$*" == "x......" ]]; then
-    cd ../../../../..
-  else
-    builtin cd "$@"
-  fi
-}
-
-# DIR
 alias md='mkdir -p'
 alias rd=rmdir
 alias d='dirs -v | head -10'
-function mkcd() { mkdir -p "$@" && cd "$_"; }
 
 # LIST DIRECORY CONTENTS
 alias lsa='ls -lah'

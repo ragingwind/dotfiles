@@ -42,4 +42,4 @@ unset config_files
 
 # Which plugins would you like to load?
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# plugins=(git)
+plugins=(git)
