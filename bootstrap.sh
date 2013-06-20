@@ -35,4 +35,4 @@ fi
 brew install grc coreutils gibo
 
 # INSTALL NPM PACKAGES AND GRUNT DOTFILE
-npm install && grunt
+npm install && grunt -v

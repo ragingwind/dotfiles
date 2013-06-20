@@ -24,7 +24,7 @@ module.exports = function (grunt) {
                             '!<%= env.dotfiles %>/.DS_Store'
                         ],
                         dest: '<%= env.home %>/'
-                        }
+                    }
                 ],
                 options: {
                     symlinkext: true,
