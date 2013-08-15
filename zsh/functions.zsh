@@ -20,14 +20,3 @@ cd () {
 pserver() {
   python -m SimpleHTTPServer $@
 }
-
-# NODE
-node_clean() {
-  find . ! -name node_modules -delete
-}
-
-# SUBLIME
-subl() {
-  /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl $1 &
-}
-

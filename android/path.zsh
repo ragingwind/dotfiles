@@ -1,0 +1,1 @@
+export PATH="/usr/local/android-sdk/platform-tools:$PATH"
