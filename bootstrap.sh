@@ -32,7 +32,13 @@ if test ! $(npm -g list | grep -oE 'grunt-cli@'); then
 fi
 
 # You should add following path to .rc file for using grc. "/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-brew install grc coreutils gibo
+if [ $(uname -s) == "Darwin" ]; then
+  brew install grc coreutils gibo
+else
+  apt-get instsall grc coreutils
+  curl https://raw.github.com/simonwhitaker/gitignore-boilerplates/master/gibo \
+    -o /usr/local/bin/gibo && sudo chmod +x /usr/local/bin/gibo && gibo -u
+fi
 
 # INSTALL NPM PACKAGES AND GRUNT DOTFILE
 npm install && grunt -v

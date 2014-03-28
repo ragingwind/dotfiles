@@ -73,7 +73,7 @@ module.exports = function (grunt) {
             makeSymlink(grunt.file.expand({filter: symlinkFilter}, symlink.src), options, function(src, stat) {
                 return {
                     src: path.resolve(process.cwd(), src),
-                    dest: symlink.dest + path.basename(src);
+                    dest: symlink.dest + path.basename(src)
                 };
             });
         });
