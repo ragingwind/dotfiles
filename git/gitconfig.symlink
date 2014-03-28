@@ -7,7 +7,7 @@
 	excludesfile = ~/.gitignore
 	editor = /usr/bin/vim
 [heroku]
-	account = home@moonandyou.com
+	account = ragingwind@gmail.com
 [alias]
 # [Must Have Git Aliases: Advanced Examples - be present now]( http://goo.gl/W8X4k )
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
@@ -34,6 +34,14 @@
   st = status -s
   cl = cloneci = commit
   co = checkoutbr = branch
-  diff = diff --word-diff
-  dc = diff --cached
+  # diff = diff --word-diff
+  # dc = diff --cached
   r = resetr1 = reset HEAD^r2 = reset HEAD^^rh = reset --hardrh1 = reset HEAD^ --hardrh2 = reset HEAD^^ --hard
+	d = difftool
+	vimdiff = difftool -y -t vimdiff -R
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[push]
+	default = matching

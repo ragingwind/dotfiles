@@ -28,6 +28,14 @@ node_clean() {
 
 # SUBLIME
 subl() {
-  /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl $1 &
+  /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $1 &
 }
 
+rmpyc() {
+  find . -name "*.pyc" -exec rm -rf {} \;
+}
+
+# DIFF
+function diff {
+    colordiff -u "$@" | less -RF
+}

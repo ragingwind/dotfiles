@@ -39,15 +39,18 @@ git_dirty() {
 }
 
 # Displays the exec time of the last command if set threshold was exceeded
+start_time=$SECONDS
 cmd_exec_time() {
-  printf "%.4fs" "$SECONDS"
+  printf "%.4fs" "$(($SECONDS-$start_time))"
 }
 
 preexec() {
-  SECONDS=0
+  # echo preexec
+  start_time=$SECONDS
 }
 
 precmd() {
+  # echo precmd
   # Add pwd to z
   _z --add "$(pwd -P)"
   # Check status of virsion control
@@ -55,7 +58,8 @@ precmd() {
   # Add `%*` to display the time
   print -P '\n%F{blue}%~%F{yellow}$vcs_info_msg_0_`git_dirty`%f %F{white}$username%f %F{cyan}`cmd_exec_time`%f'
   # Reset value since `preexec` isn't always triggered
-  SECONDS=0
+  # unset start_time
+  start_time=$SECONDS
 }
 
 # Prompt turns red if the previous command didn't exit with 0
