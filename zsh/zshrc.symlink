@@ -5,13 +5,6 @@ ZSH=$HOME/.dotfiles
 autoload -U compinit
 compinit
 
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
-
 # all of our zsh files
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
@@ -43,3 +36,11 @@ unset config_files
 # Which plugins would you like to load?
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
+
+# use .localrc for SUPER SECRET CRAP that you don't
+# want in your public, versioned repo.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+

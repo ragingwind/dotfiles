@@ -1,0 +1,106 @@
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'scrooloose/nerdtree'
+
+set nocompatible
+syntax enable
+filetype plugin indent on
+
+set encoding=utf-8
+set showcmd
+set showmode
+set showmatch
+set nowrap
+set expandtab
+set backspace=indent,eol,start
+set autoindent
+set number
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set tabstop=2 
+set shiftwidth=2
+set nostartofline
+set wrap
+set textwidth=80
+let mapleader = ','
+let g:mapleader = ','
+
+"autocmd vimenter * if !argc() | NERDTree | endi
+"autocmd vimenter * NERDTree
+
+" NERDTree
+let g:NERDChristmasTree=1
+let g:NERDTreeAutoCenter=1
+let g:NERDTreeHighlightCursorline=1
+let g:NERDTreeHijackNetrw=1
+let g:NERDTreeStatusline=1
+let g:NERDTreeWinSize=20
+
+nmap <C-k> :NERDTreeToggle<CR>
+imap <C-k> :NERDTreeToggle<CR>
+
+" FuzzyFinder
+nmap <S-F3> :FufDir<CR>
+imap <S-F3> :FufDir<CR>
+nmap <F3> :FufFile */<CR>
+imap <F3> :FufFile */<CR>
+map <Leader>t :FufFile **/<CR>
+nnoremap <C-t> :FufFile **/<CR>
+nmap <F4> :FufBuffer<CR>
+imap <F4> :FufBuffer<CR>
+
+" Tab commands and navigation
+nmap <C-n> :tabnew<CR>
+imap <C-n> <Esc>:tabnew<CR>
+nmap <C-Left> :tabprevious<CR>
+imap <C-Left> <ESC>:tabprevious<CR>
+nmap <C-Right> :tabnext<CR>
+imap <C-Right> <Esc>:tabnext<CR>i
+
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt                                                                                                                            
+noremap <leader>4 4gt                                                                                                                           
+noremap <leader>5 5gt                                                                                                                            
+noremap <leader>6 6gt                                                                                                                            
+noremap <leader>7 7gt                                                                                                                            
+noremap <leader>8 8gt                                                                                                                            
+noremap <leader>9 9gt                                                                                                                            
+noremap <leader>0 :tablast<cr>
+
+noremap <C-A> gggH<C-O>G
+inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
+cnoremap <C-A> <C-C>gggH<C-O>G
+onoremap <C-A> <C-C>gggH<C-O>G
+snoremap <C-A> <C-C>gggH<C-O>G
+xnoremap <C-A> <C-C>ggVG
+
+" Extend keys in visual mode
+vnoremap <BS> d
+vnoremap c y
+vnoremap v p
+
+" Bind keys for Windows experience 
+nmap <C-q> :q<CR>
+nmap <C-s> :w<CR>
+vmap <C-s> <C-C>:w<CR>
+imap <C-s> <C-O>:w<CR>
+inoremap <C-z> <C-O>u
+nnoremap <C-z> <C-O>u
+
+" Utils 
+nnoremap <LEADER>re :source $HOME/.vimrc<CR> 
+
+" Turn on these
+set nu
+set ar
+

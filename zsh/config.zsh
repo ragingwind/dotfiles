@@ -33,3 +33,6 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt complete_aliases
 
+# Reclaim CTRL-S and CTRL-Q key bindings 
+stty -ixon -ixoff
+
