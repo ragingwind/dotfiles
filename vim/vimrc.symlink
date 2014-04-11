@@ -1,3 +1,7 @@
+set nocompatible
+syntax enable
+filetype plugin indent on
+
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -8,10 +12,6 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'scrooloose/nerdtree'
-
-set nocompatible
-syntax enable
-filetype plugin indent on
 
 set encoding=utf-8
 set showcmd
@@ -26,11 +26,12 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-set tabstop=2 
+set tabstop=2
 set shiftwidth=2
 set nostartofline
 set wrap
 set textwidth=80
+
 let mapleader = ','
 let g:mapleader = ','
 
@@ -49,32 +50,41 @@ nmap <C-k> :NERDTreeToggle<CR>
 imap <C-k> :NERDTreeToggle<CR>
 
 " FuzzyFinder
-nmap <S-F3> :FufDir<CR>
-imap <S-F3> :FufDir<CR>
-nmap <F3> :FufFile */<CR>
-imap <F3> :FufFile */<CR>
-map <Leader>t :FufFile **/<CR>
-nnoremap <C-t> :FufFile **/<CR>
-nmap <F4> :FufBuffer<CR>
-imap <F4> :FufBuffer<CR>
+nmap <leader>fd :FufDir<CR>
+imap <leader>fd :FufDir<CR>
+map <leader>ff :FufFile */<CR>
+nmap <leader>ff :FufFile */<CR>
+map <leader>fa :FufFile **/<CR>
+nmap <leader>fa :FufFile **/<CR>
+nmap <leader>fb :FufBuffer<CR>
+imap <leader>fb <C-O>:FufBuffer<CR>
+nmap <C-t> :FufFile */<CR>
+imap <C-t> <C-O>:FufFile */<CR>
+
+" indent for command mode
+nmap <S-Tab> <<
+imap <S-Tab> <Esc><<i
+nmap <Tab> >>
 
 " Tab commands and navigation
 nmap <C-n> :tabnew<CR>
 imap <C-n> <Esc>:tabnew<CR>
-nmap <C-Left> :tabprevious<CR>
-imap <C-Left> <ESC>:tabprevious<CR>
-nmap <C-Right> :tabnext<CR>
-imap <C-Right> <Esc>:tabnext<CR>i
+nmap <C-h> :tabprevious<CR>
+imap <C-h> <ESC>:tabprevious<CR>i
+nmap <C-l> :tabnext<CR>
+imap <C-l> <Esc>:tabnext<CR>i
+noremap <leader>, :tabprevious<CR>
+noremap <leader>. :tabnext<CR>
 
 noremap <leader>1 1gt
 noremap <leader>2 2gt
-noremap <leader>3 3gt                                                                                                                            
-noremap <leader>4 4gt                                                                                                                           
-noremap <leader>5 5gt                                                                                                                            
-noremap <leader>6 6gt                                                                                                                            
-noremap <leader>7 7gt                                                                                                                            
-noremap <leader>8 8gt                                                                                                                            
-noremap <leader>9 9gt                                                                                                                            
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
 noremap <C-A> gggH<C-O>G
@@ -89,7 +99,7 @@ vnoremap <BS> d
 vnoremap c y
 vnoremap v p
 
-" Bind keys for Windows experience 
+" Bind keys for Windows experience
 nmap <C-q> :q<CR>
 nmap <C-s> :w<CR>
 vmap <C-s> <C-C>:w<CR>
@@ -97,10 +107,9 @@ imap <C-s> <C-O>:w<CR>
 inoremap <C-z> <C-O>u
 nnoremap <C-z> <C-O>u
 
-" Utils 
-nnoremap <LEADER>re :source $HOME/.vimrc<CR> 
+" Utils
+nnoremap <LEADER>re :source $HOME/.vimrc<CR>
 
 " Turn on these
 set nu
 set ar
-

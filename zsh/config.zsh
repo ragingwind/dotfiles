@@ -36,3 +36,5 @@ setopt complete_aliases
 # Reclaim CTRL-S and CTRL-Q key bindings 
 stty -ixon -ixoff
 
+#bindkey '^[[1;5D' backward-word
+#"bindkey '^[[1;5C' forward-word
