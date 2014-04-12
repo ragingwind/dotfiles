@@ -110,6 +110,11 @@ nnoremap <C-z> <C-O>u
 " Utils
 nnoremap <LEADER>re :source $HOME/.vimrc<CR>
 
+" For shell in Chrome
+nnoremap <silent> <C-E><C-E> <c-w>w
+nnoremap <silent> <C-E>w <c-w>w
+nmap <leader>t :tabnew<CR>
+
 " Turn on these
 set nu
 set ar

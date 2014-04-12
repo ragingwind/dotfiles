@@ -1,28 +1,40 @@
-#!/bin/sh
+#!/bin/bash
 # Install the neccessary apps and must have items.
 
+command_exists() {
+  type "$1" &> /dev/null;
+}
+
 # RVM & RUBY
-if test ! $(which ~/.rvm/bin/rvm); then
+if test ! -x ~/.rvm/bin/rvm; then
   echo "RVM is not installed. starting installation"
   curl -L https://get.rvm.io | bash -s stable --ruby
 fi
 
-# HOMEBREW
-if [ $(uname -s) == "Darwin" ]; then
-  if test ! $(which brew); then
-    echo "HOMEBREW is not installed. starting installation"
-    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-    exit
-  fi
-fi
-
-# NVM
-if test ! $(which ~/.nvm/nvm.sh); then
+# NVM & NPM
+if test ! -d ~/.nvm; then
   echo "NVM is not installed. starting installation"
   curl https://raw.github.com/creationix/nvm/master/install.sh | sh
   nvm install $(curl -s -o - http://nodejs.org/dist/latest/ | grep -oE 'v[0-9]+.[0-9]+.[0-9]+' | sort -u -t . -k 1,1n -k 2,2n -k 3,3)
   sudo chown -R $USER /usr/local
   exit
+fi
+
+if type npm &> /dev/null; then
+  echo "NPM has been installed"
+else
+  echo "NPM is not installed"
+  curl https://www.npmjs.org/install.sh | sh
+  exit
+fi
+
+# HOMEBREW
+if [ "$(uname -s)" == "Darwin" ]; then
+  if test ! $(which brew); then
+    echo "HOMEBREW is not installed. starting installation"
+    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+    exit
+  fi
 fi
 
 # MUST HAVE ITEMS
