@@ -67,14 +67,13 @@ imap <S-Tab> <Esc><<i
 nmap <Tab> >>
 
 " Tab commands and navigation
-nmap <C-n> :tabnew<CR>
-imap <C-n> <Esc>:tabnew<CR>
+nmap <leader>t :tabnew<CR>
 nmap <C-h> :tabprevious<CR>
 imap <C-h> <ESC>:tabprevious<CR>i
 nmap <C-l> :tabnext<CR>
 imap <C-l> <Esc>:tabnext<CR>i
-noremap <leader>, :tabprevious<CR>
-noremap <leader>. :tabnext<CR>
+noremap <leader>a :tabprevious<CR>
+noremap <leader>d :tabnext<CR>
 
 noremap <leader>1 1gt
 noremap <leader>2 2gt
@@ -87,12 +86,12 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
-noremap <C-A> gggH<C-O>G
-inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
-cnoremap <C-A> <C-C>gggH<C-O>G
-onoremap <C-A> <C-C>gggH<C-O>G
-snoremap <C-A> <C-C>gggH<C-O>G
-xnoremap <C-A> <C-C>ggVG
+noremap <C-a> gggH<C-O>G
+inoremap <C-a> <C-O>gg<C-O>gH<C-O>G
+cnoremap <C-a> <C-C>gggH<C-O>G
+onoremap <C-a> <C-C>gggH<C-O>G
+snoremap <C-a> <C-C>gggH<C-O>G
+xnoremap <C-a> <C-C>ggVG
 
 " Extend keys in visual mode
 vnoremap <BS> d
@@ -108,12 +107,14 @@ inoremap <C-z> <C-O>u
 nnoremap <C-z> <C-O>u
 
 " Utils
-nnoremap <LEADER>re :source $HOME/.vimrc<CR>
+nnoremap <leader>re :source $HOME/.vimrc<CR>
 
-" For shell in Chrome
-nnoremap <silent> <C-E><C-E> <c-w>w
-nnoremap <silent> <C-E>w <c-w>w
-nmap <leader>t :tabnew<CR>
+" (Redfine) Window navigation
+nnoremap <leader>, <c-w>w<CR>
+nnoremap <leader>w<Right> <c-w>l<CR>
+nnoremap <leader>w<Left> <c-w>h<CR>
+nnoremap <leader>w<Up> <c-w>k<CR>
+nnoremap <leader>w<Down> <c-w>j<CR>
 
 " Turn on these
 set nu

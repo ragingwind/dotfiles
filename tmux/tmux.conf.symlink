@@ -1,8 +1,8 @@
 # Binds {{{
 # Prefix
-# unbind C-b
-# set-option -g prefix C-a
-# bind a send-prefix
+unbind C-b
+set-option -g prefix C-e
+bind a send-prefix
 
 # Last active window
 unbind l
