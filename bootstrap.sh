@@ -42,6 +42,10 @@ if test ! $(npm -g list | grep -oE 'grunt-cli@'); then
   npm install -g grunt-cli
 fi
 
+# Dropbox
+curl 'https://linux.dropbox.com/packages/dropbox.py' > /usr/local/bin/dropbox.py
+chmod 755 /usr/local/bin/dropbox.py
+
 # You should add following path to .rc file for using grc. "/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 if [ $(uname -s) == "Darwin" ]; then
   brew install grc coreutils gibo
