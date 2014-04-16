@@ -8,6 +8,9 @@ bind a send-prefix
 unbind l
 bind C-b last-window
 
+# Last pane
+bind C-e last-pane
+
 # hsplit
 unbind %
 bind | split-window -h

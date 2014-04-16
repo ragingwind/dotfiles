@@ -12,6 +12,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 
 set encoding=utf-8
 set showcmd
@@ -29,7 +30,6 @@ set smartcase
 set tabstop=2
 set shiftwidth=2
 set nostartofline
-set wrap
 set textwidth=80
 
 let mapleader = ','
@@ -46,8 +46,8 @@ let g:NERDTreeHijackNetrw=1
 let g:NERDTreeStatusline=1
 let g:NERDTreeWinSize=20
 
-nmap <C-k> :NERDTreeToggle<CR>
-imap <C-k> :NERDTreeToggle<CR>
+nmap <C-k> :NERDTreeTabsToggle<CR>
+imap <C-k> :NERDTreeTabsToggle<CR>
 
 " FuzzyFinder
 nmap <leader>fd :FufDir<CR>
@@ -68,10 +68,10 @@ nmap <Tab> >>
 
 " Tab commands and navigation
 nmap <leader>t :tabnew<CR>
-nmap <C-h> :tabprevious<CR>
-imap <C-h> <ESC>:tabprevious<CR>i
-nmap <C-l> :tabnext<CR>
-imap <C-l> <Esc>:tabnext<CR>i
+nmap <C-a> :tabprevious<CR>
+imap <C-a> <ESC>:tabprevious<CR>i
+nmap <C-b> :tabnext<CR>
+imap <C-b> <Esc>:tabnext<CR>i
 noremap <leader>a :tabprevious<CR>
 noremap <leader>d :tabnext<CR>
 
@@ -86,12 +86,13 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
-noremap <C-a> gggH<C-O>G
-inoremap <C-a> <C-O>gg<C-O>gH<C-O>G
-cnoremap <C-a> <C-C>gggH<C-O>G
-onoremap <C-a> <C-C>gggH<C-O>G
-snoremap <C-a> <C-C>gggH<C-O>G
-xnoremap <C-a> <C-C>ggVG
+" Select all of contents (DREPRECADED)
+" noremap <C-a> gggH<C-O>G
+" inoremap <C-a> <C-O>gg<C-O>gH<C-O>G
+" cnoremap <C-a> <C-C>gggH<C-O>G
+" onoremap <C-a> <C-C>gggH<C-O>G
+" snoremap <C-a> <C-C>gggH<C-O>G
+" xnoremap <C-a> <C-C>ggVG
 
 " Extend keys in visual mode
 vnoremap <BS> d

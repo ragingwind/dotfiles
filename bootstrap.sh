@@ -14,17 +14,17 @@ fi
 # NVM & NPM
 if test ! -d ~/.nvm; then
   echo "NVM is not installed. starting installation"
-  curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+  curl https://raw.github.com/creationix/nvm/master/install.sh | bash
+  source $HOME/.bash_profile
   nvm install $(curl -s -o - http://nodejs.org/dist/latest/ | grep -oE 'v[0-9]+.[0-9]+.[0-9]+' | sort -u -t . -k 1,1n -k 2,2n -k 3,3)
   sudo chown -R $USER /usr/local
-  exit
 fi
 
 if type npm &> /dev/null; then
   echo "NPM has been installed"
 else
   echo "NPM is not installed"
-  curl https://www.npmjs.org/install.sh | sh
+  curl https://www.npmjs.org/install.sh | bash
   exit
 fi
 
@@ -33,7 +33,6 @@ if [ "$(uname -s)" == "Darwin" ]; then
   if test ! $(which brew); then
     echo "HOMEBREW is not installed. starting installation"
     ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-    exit
   fi
 fi
 
