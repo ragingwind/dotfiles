@@ -45,3 +45,5 @@
 	prompt = false
 [push]
 	default = matching
+[credential]
+	helper = cache

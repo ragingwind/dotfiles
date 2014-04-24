@@ -27,10 +27,15 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set nostartofline
 set textwidth=80
+
+set smartindent 
+set tabstop=4 
+set shiftwidth=4 
+set expandtab
 
 let mapleader = ','
 let g:mapleader = ','
@@ -107,15 +112,14 @@ imap <C-s> <C-O>:w<CR>
 inoremap <C-z> <C-O>u
 nnoremap <C-z> <C-O>u
 
+nnoremap <leader>q :q<CR>
+nnoremap <leader>s :w<CR>
+
 " Utils
 nnoremap <leader>re :source $HOME/.vimrc<CR>
 
 " (Redfine) Window navigation
 nnoremap <leader>, <c-w>w<CR>
-nnoremap <leader>w<Right> <c-w>l<CR>
-nnoremap <leader>w<Left> <c-w>h<CR>
-nnoremap <leader>w<Up> <c-w>k<CR>
-nnoremap <leader>w<Down> <c-w>j<CR>
 
 " Turn on these
 set nu
