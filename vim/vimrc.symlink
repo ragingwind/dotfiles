@@ -13,6 +13,7 @@ Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'editorconfig/editorconfig-vim'
 
 set encoding=utf-8
 set showcmd
