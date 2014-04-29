@@ -19,20 +19,17 @@ set encoding=utf-8
 set showcmd
 set showmode
 set showmatch
-set nowrap
-set expandtab
 set backspace=indent,eol,start
-set autoindent
 set number
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase
-set tabstop=4
-set shiftwidth=4
 set nostartofline
 set textwidth=80
 
+set nowrap
+set autoindent
 set smartindent 
 set tabstop=4 
 set shiftwidth=4 
@@ -64,8 +61,8 @@ map <leader>fa :FufFile **/<CR>
 nmap <leader>fa :FufFile **/<CR>
 nmap <leader>fb :FufBuffer<CR>
 imap <leader>fb <C-O>:FufBuffer<CR>
-nmap <C-t> :FufFile */<CR>
-imap <C-t> <C-O>:FufFile */<CR>
+nmap <leader>fn :tabnew \| :FufFile */<CR>
+imap <leader>fn :tabnew \| :FufFile */<CR>
 
 " indent for command mode
 nmap <S-Tab> <<
@@ -119,9 +116,11 @@ nnoremap <leader>s :w<CR>
 " Utils
 nnoremap <leader>re :source $HOME/.vimrc<CR>
 
-" (Redfine) Window navigation
+" (Redefine) Window navigation
 nnoremap <leader>, <c-w>w<CR>
 
 " Turn on these
 set nu
 set ar
+
+set pastetoggle=<leader>pp
