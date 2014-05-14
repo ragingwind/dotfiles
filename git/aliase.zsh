@@ -13,3 +13,4 @@ alias greset='git reset --hard HEAD~1'
 alias grv='git remote -v'
 alias gst='git status'
 alias gdiff='git vimdiff'
+alias merge-to="!f() { git checkout $1 && echo git merge $2 && echo git checkout -; }; f"
