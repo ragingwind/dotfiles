@@ -14,6 +14,7 @@ Plugin 'FuzzyFinder'
 Plugin 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'editorconfig/editorconfig-vim'
+Bundle "mattn/emmet-vim"
 
 set encoding=utf-8
 set showcmd
@@ -29,6 +30,7 @@ set nostartofline
 set textwidth=80
 
 set nowrap
+set textwidth=0 wrapmargin=0
 set autoindent
 set smartindent 
 set tabstop=4 
@@ -66,8 +68,10 @@ imap <leader>fn :tabnew \| :FufFile */<CR>
 
 " indent for command mode
 nmap <S-Tab> <<
-imap <S-Tab> <Esc><<i
 nmap <Tab> >>
+imap <S-Tab> <Esc><<i
+vmap <Tab> >
+vmap <S-Tab> <
 
 " Tab commands and navigation
 nmap <leader>t :tabnew<CR>
@@ -124,3 +128,20 @@ set nu
 set ar
 
 set pastetoggle=<leader>pp
+
+" Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='<C-m>'
+let g:user_emmet_mode='a'
+
+" Vim cursorline
+" set cursorline
+" hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+
+highlight Cursor guifg=white guibg=black
+highlight iCursor guifg=white guibg=steelblue
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10"
