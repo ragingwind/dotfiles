@@ -22,8 +22,16 @@ bind \ split-window -v
 # Copy mode
 unbind [
 unbind ]
-bind Escape copy-mode
+bind v copy-mode
 bind p paste-buffer
+bind-key -t vi-copy 'v' begin-selection
+bind-key -t vi-copy 'y' copy-selection
+bind-key -t vi-copy 'c' copy-selection
+bind-key -t vi-copy 'C-v' rectangle-toggle 
+bind-key -t vi-copy 'V' rectangle-toggle
+
+# buffer
+bind Space choose-buffer
 
 # Panes resize
 bind j resize-pane -U 10
@@ -53,10 +61,10 @@ set-window-option -g automatic-rename on
 # Options {{{
 set-option -g base-index 1
 set-option -g display-time 2000
-set-option -g mouse-select-pane on
-set-option -g mouse-resize-pane on
+set-option -g mouse-select-pane off
+set-option -g mouse-resize-pane off
 set-option -g mouse-utf8 on
-set-option -g mouse-select-window on
+set-option -g mouse-select-window off
 set-option -g pane-active-border-fg red
 set-option -g pane-active-border-bg black
 #set -g terminal-overrides "xterm*:kLFT5=\eOD:kRIT5=\eOC:kUP5=\eOA:kDN5=\eOB:smkx@:rmkx@"
@@ -97,13 +105,5 @@ set-window-option -g clock-mode-style 24
 set-window-option -g utf8 on
 # }}}
 
-# bind l new-window 'ssh sirislogreader' \; split-window 'ssh bdxlog' \; split-window 'ssh sirislog' \; split-window 'ssh bdxlogreader' \; rename-window LOGS \; select-layout tiled \; setw synchronize-panes
-
-
 set -g status-right ‘#[fg=yellow]#(uptime | cut -d “,” -f 2-)’
 
-#set-window-option -g xterm-keys on
-#unbind-key -n C-Left
-#unbind-key -n C-Right
-
-# vim:set ft=tmux:
