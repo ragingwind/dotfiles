@@ -14,7 +14,7 @@ fi
 # NVM & NPM
 if test ! -d ~/.nvm; then
   echo "NVM is not installed. starting installation"
-  curl https://raw.github.com/creationix/nvm/master/install.sh | bash
+  curl https://raw.githubusercontent.com/creationix/nvm/v0.7.0/install.sh | sh
   source $HOME/.bash_profile
   nvm install $(curl -s -o - http://nodejs.org/dist/latest/ | grep -oE 'v[0-9]+.[0-9]+.[0-9]+' | sort -u -t . -k 1,1n -k 2,2n -k 3,3)
   sudo chown -R $USER /usr/local
@@ -53,6 +53,11 @@ else
   apt-get instsall grc coreutils
   curl https://raw.github.com/simonwhitaker/gitignore-boilerplates/master/gibo \
     -o /usr/local/bin/gibo && sudo chmod +x /usr/local/bin/gibo && gibo -u
+fi
+
+# Configure system
+if [ "$(uname -s)" == "Linux" ]; then
+    sudo chmod -R 755 /usr/local/share/zsh/site-functions
 fi
 
 # INSTALL NPM PACKAGES AND GRUNT DOTFILE
