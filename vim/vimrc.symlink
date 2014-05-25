@@ -122,6 +122,16 @@ nnoremap <leader>re :source $HOME/.vimrc<CR>
 
 " (Redefine) Window navigation
 nnoremap <leader>, <c-w>w<CR>
+nnoremap <leader>wq <c-w>q<CR>
+nnoremap <leader>wn <c-w>n<CR>
+nnoremap <leader>wv :vsp<CR><c-w><c-r>
+nnoremap <leader>wr <c-w><c-r><CR>
+
+" Cursor
+nnoremap ` ^
+vnoremap ` ^
+nnoremap 1 $
+vnoremap 1 $
 
 " Turn on these
 set nu
