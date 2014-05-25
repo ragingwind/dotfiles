@@ -10,83 +10,84 @@ module.exports = function (grunt) {
     grunt.initConfig({
         env: {
             home: userhome,
-            dotfiles: userhome + '/Dropbox/Private/dotfiles'
+            local: './local'
         },
         symlink: {
+            options: {
+                overwrite: true,
+                backup: true
+            },
             default: {
-                files: [
-                    {
-                        src: 'bin/*', dest: '/usr/local/bin/'
-                    },
-                    {
-                        src: [
-                            '<%= env.dotfiles %>/.*',
-                            '!<%= env.dotfiles %>/.DS_Store'
-                        ],
-                        dest: '<%= env.home %>/'
-                    }
-                ],
                 options: {
-                    symlinkext: true,
-                    overwrite: true,
-                    backup: true
-                }
+                    rename: function(filename) {
+                        return '.' + path.basename(filename, '.symlink');
+                    }
+                },
+                files: [{
+                    src: '**/*.symlink', dest: '<%= env.home %>/'
+                }],
+            },
+            bin: {
+                files: [{
+                    src: 'bin/*', dest: '/usr/local/bin/'
+                }]
+            },
+            local: {
+                options: {
+                    rename: function(filename) {
+                        return '.' + filename;
+                    }
+                },
+                files: [{
+                    src: '<%= env.local %>/*', dest: '<%= env.home %>/'
+                }],
             }
         }
     });
 
     var makeSymlink = function(targets, options, pathfilter) {
         targets.forEach(function(target) {
+            verbose.writeln('target', target)
             var stat = fs.statSync(target).isFile() ? 'file' : 'dir';
             var path = pathfilter(target, stat);
-
+            verbose.writeln('dest', path.dest)
+            verbose.writeln('exist', fs.existsSync(path.dest));
+            verbose.writeln('Link', path.src, 'to', path.dest);
+ 
             if (fs.existsSync(path.dest)) {
-                verbose.error('Destination already exist.', path.dest);
                 if (options.backup) {
                     var bak = path.dest + '.bak', count = 0;
                     while (fs.existsSync(bak)) {
                         bak = path.dest + '.bak' + ((count++ > 0) ? '.' + count : '');
                     };
-                    verbose.writeln('Backup:', path.dest, '->', bak);
+                    verbose.writeln('Backup', path.dest, 'to', bak);
                     fs.renameSync(path.dest, bak);
                 } else if (options.overwrite) {
-                    verbose.writeln('Remove:', path.dest);
+                    verbose.writeln('Remove', path.dest);
                     fs.unlinkSync(path.dest);
                 }
             }
-
-            verbose.writeln('Symbolic', stat + ':', path.src, '->', path.dest);
-            fs.symlinkSync(path.src, path.dest, stat);
+           fs.symlinkSync(path.src, path.dest, stat);
         });
     }
 
     grunt.task.registerMultiTask('symlink', '', function() {
         var options = this.options();
-        var symlinkFilter = function(file) {
-            return path.extname(path.basename(file)) !== '.symlink';
-        };
 
         grunt.verbose.writeflags(options, 'Options');
 
-        // make symbolic link with items in manifest.
         this.files.forEach(function(symlink) {
-            makeSymlink(grunt.file.expand({filter: symlinkFilter}, symlink.src), options, function(src, stat) {
+            makeSymlink(grunt.file.expand({}, symlink.src), options, function(src, stat) {
+                var dest = path.basename(src)
+                if (options.rename) {
+                    dest = options.rename(dest)
+                }
                 return {
                     src: path.resolve(process.cwd(), src),
-                    dest: symlink.dest + path.basename(src)
+                    dest: symlink.dest + dest
                 };
             });
         });
-
-        // make symbolic link with files that has .symlink fileext in subdir.
-        if (options.symlinkext) {
-            makeSymlink(grunt.file.expand('**/*.symlink'), options, function(src, stat) {
-                return {
-                    src: path.resolve(process.cwd(), src),
-                    dest: userhome + '/.' + (stat === 'file' ? path.basename(src, '.symlink') : path.dirname(src))
-                };
-            });
-        }
     });
 
     grunt.task.registerTask('source', '', function() {
@@ -98,7 +99,8 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('default', [
-        'symlink',
+        'symlink:default',
+        'symlink:bin',
         'source'
     ]);
 };

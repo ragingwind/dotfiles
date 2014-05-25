@@ -9,12 +9,13 @@ command_exists() {
 if test ! -x ~/.rvm/bin/rvm; then
   echo "RVM is not installed. starting installation"
   curl -L https://get.rvm.io | bash -s stable --ruby
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 fi
 
 # NVM & NPM
 if test ! -d ~/.nvm; then
   echo "NVM is not installed. starting installation"
-  curl https://raw.github.com/creationix/nvm/master/install.sh | bash
+  curl https://raw.githubusercontent.com/creationix/nvm/v0.7.0/install.sh | sh
   source $HOME/.bash_profile
   nvm install $(curl -s -o - http://nodejs.org/dist/latest/ | grep -oE 'v[0-9]+.[0-9]+.[0-9]+' | sort -u -t . -k 1,1n -k 2,2n -k 3,3)
   sudo chown -R $USER /usr/local
@@ -36,24 +37,30 @@ if [ "$(uname -s)" == "Darwin" ]; then
   fi
 fi
 
-# MUST HAVE ITEMS
-# Grunt is requirement to install dotfile.
+# CONFIGURE SYSTEM
+echo "You should add following path to .rc file for using grc. '/usr/local/opt/coreutils/libexec/gnubin:$PATH'
+if [ $(uname -s) == "Darwin" ]; then
+  brew install grc coreutils
+elif [ "$(uname -s)" == "Linux" ]; then
+  apt-get instsall grc coreutils
+else
+  echo "grc, coreutils skipped install"
+fi
+
+# Configure system
+if [ "$(uname -s)" == "Linux" ]; then
+    sudo chmod -R 755 /usr/local/share/zsh/site-functions
+fi
+
+# INSTALL NPM PACKAGES AND GRUNT DOTFILE
 if test ! $(npm -g list | grep -oE 'grunt-cli@'); then
   npm install -g grunt-cli
 fi
 
-# Dropbox
-curl 'https://linux.dropbox.com/packages/dropbox.py' > /usr/local/bin/dropbox.py
-chmod 755 /usr/local/bin/dropbox.py
-
-# You should add following path to .rc file for using grc. "/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-if [ $(uname -s) == "Darwin" ]; then
-  brew install grc coreutils gibo
-else
-  apt-get instsall grc coreutils
-  curl https://raw.github.com/simonwhitaker/gitignore-boilerplates/master/gibo \
-    -o /usr/local/bin/gibo && sudo chmod +x /usr/local/bin/gibo && gibo -u
+# MAKE DIRECTORY FOR LOCAL FILES IF IT DOESN'T EXISTS
+echo "If you want to make symlinks for file in local? Do `grunt symlink:local after bootstrap`"
+if [ ! -d "local" ]; then
+  mkdir local
 fi
 
-# INSTALL NPM PACKAGES AND GRUNT DOTFILE
 npm install && grunt -v
