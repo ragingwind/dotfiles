@@ -1,5 +1,5 @@
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-alias gaa='git add -A;git commit -a -m '$2''
+alias gaa='git add -A .;git commit -a -m '$2''
 alias gpo='git pull origin master'
 alias gpu='git fetch origin -v; git fetch upstream -v; git merge upstream/master'
 alias gfu='git pull --rebase upstream master'

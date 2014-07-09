@@ -22,7 +22,7 @@ bind \ split-window -v
 # Copy mode
 unbind [
 unbind ]
-bind v copy-mode
+bind Esc copy-mode
 bind p paste-buffer
 bind-key -t vi-copy 'v' begin-selection
 bind-key -t vi-copy 'y' copy-selection
@@ -30,14 +30,11 @@ bind-key -t vi-copy 'c' copy-selection
 bind-key -t vi-copy 'C-v' rectangle-toggle 
 bind-key -t vi-copy 'V' rectangle-toggle
 
+# clear history
+bind k clear-history -t:.
+
 # buffer
 bind Space choose-buffer
-
-# Panes resize
-bind j resize-pane -U 10
-bind k resize-pane -D 10
-bind h resize-pane -L 10
-bind l resize-pane -R 10
 
 # Pane next layout
 bind tab next-layout
@@ -46,11 +43,16 @@ unbind C-o
 bind r rotate-window
 bind space select-pane -t:.+
 
+bind-key / display-panes \; select-pane -t :.
+
+# List pan
+bind l list-pane
+
 # Monitor Activity
 bind m set-window-option monitor-activity
 
 # Commands
-bind / command-prompt -p "man page: " "split-window 'exec man %%'"
+# bind / command-prompt -p "man page: " "split-window 'exec man %%'"
 bind s set-window-option synchronize-panes
 # }}}
 
@@ -61,10 +63,10 @@ set-window-option -g automatic-rename on
 # Options {{{
 set-option -g base-index 1
 set-option -g display-time 2000
-set-option -g mouse-select-pane off
-set-option -g mouse-resize-pane off
+set-option -g mouse-select-pane on
+set-option -g mouse-resize-pane on
 set-option -g mouse-utf8 on
-set-option -g mouse-select-window off
+set-option -g mouse-select-window on
 set-option -g pane-active-border-fg red
 set-option -g pane-active-border-bg black
 #set -g terminal-overrides "xterm*:kLFT5=\eOD:kRIT5=\eOC:kUP5=\eOA:kDN5=\eOB:smkx@:rmkx@"
