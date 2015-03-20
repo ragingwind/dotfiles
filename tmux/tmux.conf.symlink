@@ -4,6 +4,8 @@ unbind C-b
 set-option -g prefix C-e
 bind a send-prefix
 
+bind-key b send-keys -R \; clear-history
+
 # Last active window
 unbind l
 bind C-b last-window
@@ -29,6 +31,7 @@ bind-key -t vi-copy 'y' copy-selection
 bind-key -t vi-copy 'c' copy-selection
 bind-key -t vi-copy 'C-v' rectangle-toggle 
 bind-key -t vi-copy 'V' rectangle-toggle
+bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
 
 # buffer
 bind Space choose-buffer
@@ -61,10 +64,10 @@ set-window-option -g automatic-rename on
 # Options {{{
 set-option -g base-index 1
 set-option -g display-time 2000
-set-option -g mouse-select-pane off
-set-option -g mouse-resize-pane off
+set-option -g mouse-select-pane on
+set-option -g mouse-resize-pane on
 set-option -g mouse-utf8 on
-set-option -g mouse-select-window off
+set-option -g mouse-select-window on
 set-option -g pane-active-border-fg red
 set-option -g pane-active-border-bg black
 #set -g terminal-overrides "xterm*:kLFT5=\eOD:kRIT5=\eOC:kUP5=\eOA:kDN5=\eOB:smkx@:rmkx@"
