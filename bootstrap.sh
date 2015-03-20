@@ -33,12 +33,12 @@ fi
 if [ "$(uname -s)" == "Darwin" ]; then
   if test ! $(which brew); then
     echo "HOMEBREW is not installed. starting installation"
-    ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   fi
 fi
 
 # CONFIGURE SYSTEM
-echo "You should add following path to .rc file for using grc. '/usr/local/opt/coreutils/libexec/gnubin:$PATH'
+echo "You should add following path to .rc file for using grc. '/usr/local/opt/coreutils/libexec/gnubin:$PATH'"
 if [ $(uname -s) == "Darwin" ]; then
   brew install grc coreutils
 elif [ "$(uname -s)" == "Linux" ]; then
@@ -58,8 +58,8 @@ if test ! $(npm -g list | grep -oE 'grunt-cli@'); then
 fi
 
 # MAKE DIRECTORY FOR LOCAL FILES IF IT DOESN'T EXISTS
-echo "If you want to make symlinks for file in local? Do `grunt symlink:local after bootstrap`"
-if [ ! -d "local" ]; then
+echo "If you want to make symlinks for file in local? Do 'grunt symlink:local after bootstrap'"
+if test ! -d ./local; then
   mkdir local
 fi
 
