@@ -3,8 +3,8 @@ syntax enable
 filetype plugin indent on
 
 " Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 Bundle 'gmarik/vundle'
 Plugin 'tpope/vim-fugitive'
@@ -14,9 +14,17 @@ Plugin 'FuzzyFinder'
 Plugin 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'editorconfig/editorconfig-vim'
-Bundle "mattn/emmet-vim"
+" Bundle "mattn/emmet-vim"
+Plugin 'tpope/vim-surround'
+Bundle "pangloss/vim-javascript"
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'grep.vim'
+Plugin 'rking/ag.vim'
 
-set encoding=utf-8
+call vundle#end()
+
+set encoding=utf8
 set showcmd
 set showmode
 set showmatch
@@ -36,6 +44,7 @@ set smartindent
 set tabstop=4 
 set shiftwidth=4 
 set expandtab
+set noerrorbells visualbell t_vb=
 
 let mapleader = ','
 let g:mapleader = ','
@@ -105,6 +114,7 @@ noremap <leader>0 :tablast<cr>
 vnoremap <BS> d
 vnoremap c y
 vnoremap v p
+vnoremap // y/<c-r>"<cr>
 
 " Bind keys for Windows experience
 nmap <C-q> :q<CR>
@@ -140,18 +150,39 @@ set ar
 set pastetoggle=<leader>pp
 
 " Emmet
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-let g:user_emmet_leader_key='<C-m>'
-let g:user_emmet_mode='a'
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css EmmetInstall
+" let g:user_emmet_leader_key='<C-m>'
+" let g:user_emmet_mode='a'
 
 " Vim cursorline
-" set cursorline
-" hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+set cursorline
+hi CursorLine cterm=NONE ctermbg=darkred ctermfg=grey guibg=darkred guifg=white
 
-highlight Cursor guifg=white guibg=black
-highlight iCursor guifg=white guibg=steelblue
-set guicursor=n-v-c:block-Cursor
-set guicursor+=i:ver100-iCursor
-set guicursor+=n-v-c:blinkon0
-set guicursor+=i:blinkwait10"
+if exists('$ITERM_PROFILE')
+    if exists('$TMUX')
+        let &t_SI = "\<Esc>[3 q"
+        let &t_EI = "\<Esc>[0 q"
+    else
+        let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+        let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+    endif
+endif
+
+" Ag
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" Markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Multiple cursor
+highlight multiple_cursors_cursor term=reverse cterm=reverse gui=reverse
+highlight link multiple_cursors_visual Visual
+
+" Diff
+if &diff
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+endif
