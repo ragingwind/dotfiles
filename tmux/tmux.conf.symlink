@@ -24,7 +24,7 @@ bind \ split-window -v
 # Copy mode
 unbind [
 unbind ]
-bind v copy-mode
+bind Esc copy-mode
 bind p paste-buffer
 bind-key -t vi-copy 'v' begin-selection
 bind-key -t vi-copy 'y' copy-selection
@@ -33,14 +33,11 @@ bind-key -t vi-copy 'C-v' rectangle-toggle
 bind-key -t vi-copy 'V' rectangle-toggle
 bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
 
+# clear history
+bind k clear-history -t:.
+
 # buffer
 bind Space choose-buffer
-
-# Panes resize
-bind j resize-pane -U 10
-bind k resize-pane -D 10
-bind h resize-pane -L 10
-bind l resize-pane -R 10
 
 # Pane next layout
 bind tab next-layout
@@ -49,11 +46,16 @@ unbind C-o
 bind r rotate-window
 bind space select-pane -t:.+
 
+bind-key / display-panes \; select-pane -t :.
+
+# List pan
+bind l list-pane
+
 # Monitor Activity
 bind m set-window-option monitor-activity
 
 # Commands
-bind / command-prompt -p "man page: " "split-window 'exec man %%'"
+# bind / command-prompt -p "man page: " "split-window 'exec man %%'"
 bind s set-window-option synchronize-panes
 # }}}
 
