@@ -44,3 +44,5 @@ alias ll='ls -l'
 alias la='ls -lA'
 alias sl=ls # often screw this up
 
+alias treed='tree -d -L 1'
+alias treed2='tree -d -L 2'
