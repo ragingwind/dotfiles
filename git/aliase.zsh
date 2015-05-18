@@ -1,9 +1,9 @@
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-<<<<<<< HEAD
 alias ga='git add'
 alias gpush='git push origin $2'
 alias gpull='git pull origin $2'
 alias gpu='git fetch upstream -v; git merge upstream/master; git rebase upstream/master'
+alias gpa='git push origin master --tags'
 alias gru='git pull --rebase upstream master'
 alias gaa='git add -A .;git commit -a -m '$2''
 alias gpo='git pull origin master'
