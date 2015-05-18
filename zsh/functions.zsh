@@ -28,7 +28,9 @@ node_clean() {
 
 # SUBLIME
 subl() {
-  /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $1 &
+  # DEPRECATED
+  # /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $1 &
+  open -a 'Sublime Text' $1
 }
 
 rmpyc() {

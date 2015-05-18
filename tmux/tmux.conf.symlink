@@ -24,7 +24,6 @@ bind \ split-window -v
 # Copy mode
 unbind [
 unbind ]
-bind Esc copy-mode
 bind p paste-buffer
 bind-key -t vi-copy 'v' begin-selection
 bind-key -t vi-copy 'y' copy-selection
