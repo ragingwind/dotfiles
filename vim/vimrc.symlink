@@ -118,6 +118,7 @@ nnoremap <C-z> <C-O>u
 
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s :w<CR>
+nnoremap <leader>Q :qa!<CR>
 
 " Utils
 nnoremap <leader>re :source $HOME/.vimrc<CR>
