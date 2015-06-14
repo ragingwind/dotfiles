@@ -102,14 +102,6 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
-" Select all of contents (DREPRECADED)
-" noremap <C-a> gggH<C-O>G
-" inoremap <C-a> <C-O>gg<C-O>gH<C-O>G
-" cnoremap <C-a> <C-C>gggH<C-O>G
-" onoremap <C-a> <C-C>gggH<C-O>G
-" snoremap <C-a> <C-C>gggH<C-O>G
-" xnoremap <C-a> <C-C>ggVG
-
 " Extend keys in visual mode
 vnoremap <BS> d
 vnoremap c y
