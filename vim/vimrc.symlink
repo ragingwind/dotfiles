@@ -14,13 +14,14 @@ Plugin 'FuzzyFinder'
 Plugin 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'editorconfig/editorconfig-vim'
-" Bundle "mattn/emmet-vim"
 Plugin 'tpope/vim-surround'
 Bundle "pangloss/vim-javascript"
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'grep.vim'
 Plugin 'rking/ag.vim'
+Plugin 'sjl/vitality.vim'
+Plugin 'slim-template/vim-slim'
 
 call vundle#end()
 
@@ -49,10 +50,9 @@ set noerrorbells visualbell t_vb=
 let mapleader = ','
 let g:mapleader = ','
 
-"autocmd vimenter * if !argc() | NERDTree | endi
-"autocmd vimenter * NERDTree
-
 " NERDTree
+autocmd vimenter * if !argc() | NERDTree | endi
+autocmd vimenter * if 0 | NERDTree | endi
 let g:NERDChristmasTree=1
 let g:NERDTreeAutoCenter=1
 let g:NERDTreeHighlightCursorline=1
@@ -149,13 +149,7 @@ set ar
 
 set pastetoggle=<leader>pp
 
-" Emmet
-" let g:user_emmet_install_global = 0
-" autocmd FileType html,css EmmetInstall
-" let g:user_emmet_leader_key='<C-m>'
-" let g:user_emmet_mode='a'
-
-" Vim cursorline
+" Cursor color
 set cursorline
 hi CursorLine cterm=NONE ctermbg=darkred ctermfg=grey guibg=darkred guifg=white
 
@@ -189,3 +183,8 @@ endif
 
 " Run
 nmap <c-r>n :!node %<cr>
+
+
+let g:vitality_fix_cursor = 1
+let g:vitality_fix_focus = 1
+let g:vitality_always_assume_iterm = 1
