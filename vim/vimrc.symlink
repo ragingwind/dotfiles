@@ -151,7 +151,7 @@ set pastetoggle=<leader>pp
 
 " Cursor color
 set cursorline
-hi CursorLine cterm=NONE ctermbg=darkred ctermfg=grey guibg=darkred guifg=white
+hi CursorLine cterm=NONE ctermbg=darkmagenta ctermfg=grey guibg=darkred guifg=white
 
 if exists('$ITERM_PROFILE')
     if exists('$TMUX')
