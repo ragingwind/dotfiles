@@ -25,15 +25,14 @@ if type npm &> /dev/null; then
   echo "NPM has been installed"
 else
   echo "NPM is not installed"
-  curl https://www.npmjs.org/install.sh | bash
-  exit
+  nvm install v0.10.32
 fi
 
 # HOMEBREW
 if [ "$(uname -s)" == "Darwin" ]; then
   if test ! $(which brew); then
     echo "HOMEBREW is not installed. starting installation"
-    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 fi
 
