@@ -1,6 +1,5 @@
 # ZSH
-alias reload!='source ~/.zshrc'
-alias re!='reload!'
+alias re!='source ~/.zshrc'
 
 # IP ADDRESSES
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
