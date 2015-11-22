@@ -19,3 +19,8 @@ git-touch-commit() {
 git-push-all() {
     git push origin master --tags
 }
+
+git-remote-tag() {
+    git tag -d $@
+    git push origin :refs/tags/$@
+}
