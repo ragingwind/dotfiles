@@ -24,3 +24,11 @@ git-remote-tag() {
     git tag -d $@
     git push origin :refs/tags/$@
 }
+
+git-remove-systemfile() {
+    find . -name .DS_Store -print0 | xargs -0 git rm --ignore-unmatch
+}
+
+git-commit-before() {
+  git commit $@ --date "$(theday before)"
+}

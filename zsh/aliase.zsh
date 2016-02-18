@@ -5,6 +5,7 @@ alias re!='source ~/.zshrc'
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias lip="ifconfig | grep 192"
 
 # ENHANCED WHOIS LOOKUPS
 alias whois="whois -h whois-servers.net"
