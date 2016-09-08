@@ -41,11 +41,12 @@ set textwidth=80
 set nowrap
 set textwidth=0 wrapmargin=0
 set autoindent
-set smartindent 
-set tabstop=4 
-set shiftwidth=4 
+set smartindent
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set noerrorbells visualbell t_vb=
+set autoread
 
 let mapleader = ','
 let g:mapleader = ','
