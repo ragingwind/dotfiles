@@ -12,3 +12,4 @@ Thumbs.db
 *.rbc
 .tags
 npm-debug.log
+.vscode
