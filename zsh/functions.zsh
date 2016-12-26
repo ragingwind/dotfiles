@@ -41,3 +41,6 @@ rmpyc() {
 function diff {
     colordiff -u "$@" | less -RF
 }
+
+# VS CODE
+code () {VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
