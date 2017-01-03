@@ -1,4 +1,4 @@
-# dotfile
+# dotfiles
 
 > dotfiles for @ragingwind
 
