@@ -1,6 +1,0 @@
-#!/bin/bash
-FILES=./*
-for f in $FILES
-do
-	ffprobe $f 2>&1 | grep 'Input\|Metadata\|encoder\|Stream' >> mediainfos.log
-done
