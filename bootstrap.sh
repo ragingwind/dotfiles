@@ -43,5 +43,5 @@ fi
 # setup node and excute install script
 [ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
 nvm alias default node
-node .
+npm install && npm start
 

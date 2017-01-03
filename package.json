@@ -1,7 +1,12 @@
 {
   "private": true,
-  "dependencies": {}
   "engines": {
     "node": ">= 6"
+  },
+  "scripts": {
+    "start": "path-symlink-cli '**/*.symlink' 'local/*' $HOME --strip"
+  },
+  "devDependencies": {
+    "path-symlink-cli": "0.0.1"
   }
 }
