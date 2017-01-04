@@ -23,7 +23,7 @@ sudo nvram SystemAudioVolume=" "
 defaults write com.apple.finder CreateDesktop -bool false
 
 # Set highlight color to green
-defaults write NSGlobalDomain AppleHighlightColor -string "0.2 0.2 0.2 0.3"
+defaults write NSGlobalDomain AppleHighlightColor -string "1 0.78 0.78"
 
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
