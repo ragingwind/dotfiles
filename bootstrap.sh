@@ -29,6 +29,9 @@ if [ "$(uname -s)" == "Darwin" ]; then
   # install and change shell into zsh
   brew install zsh
   brew install tmux
+
+  # update macos environment
+  source .macos
 fi
 
 # configuration for linux
