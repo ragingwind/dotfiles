@@ -8,6 +8,13 @@ Bootstrap will install an enssential programs. For example rvm, nvm and brew, an
 
 ```sh
 sh ./bootstrap.sh
+
+# npm start:[TARGETOS]
+npm start:macos
+
+# or
+
+npm start:ubuntu
 ```
 
 # License
