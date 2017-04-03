@@ -18,7 +18,8 @@ cd () {
 
 # INSTANT SERVER
 pserver() {
-  python -m SimpleHTTPServer $@
+  # @todo, set default port
+  python -m SimpleHTTPServer 8000 $1
 }
 
 # NODE
@@ -41,6 +42,3 @@ rmpyc() {
 function diff {
     colordiff -u "$@" | less -RF
 }
-
-# VS CODE
-code () {VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}

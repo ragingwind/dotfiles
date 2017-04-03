@@ -28,7 +28,7 @@ setopt PROMPT_SUBST
 typeset -F SECONDS=0
 
 # Only show username if not default
-local username='%n@%m'
+local username='%n'
 
 # Fastest possible way to check if repo is dirty
 git_dirty() {

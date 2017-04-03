@@ -11,8 +11,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'L9'
 Plugin 'FuzzyFinder'
-Plugin 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
+" Plugin 'scrooloose/nerdtree'
+" Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'editorconfig/editorconfig-vim'
 Plugin 'tpope/vim-surround'
 Bundle "pangloss/vim-javascript"
@@ -52,14 +52,15 @@ let mapleader = ','
 let g:mapleader = ','
 
 " NERDTree
-autocmd vimenter * if !argc() | NERDTree | endi
-autocmd vimenter * if 0 | NERDTree | endi
-let g:NERDChristmasTree=1
+" autocmd vimenter * if !argc() | NERDTree | endi
+" autocmd vimenter * if 0 | NERDTree | endi
+let g:NERDChristmasTree=0
 let g:NERDTreeAutoCenter=1
 let g:NERDTreeHighlightCursorline=1
-let g:NERDTreeHijackNetrw=1
+let g:NERDTreeHijackNetrw=0
 let g:NERDTreeStatusline=1
 let g:NERDTreeWinSize=20
+let g:NERDTreeQuitOnOpen=0
 
 nmap <C-k> :NERDTreeTabsToggle<CR>
 imap <C-k> :NERDTreeTabsToggle<CR>
@@ -145,7 +146,7 @@ set pastetoggle=<leader>pp
 
 " Cursor color
 set cursorline
-hi CursorLine cterm=NONE ctermbg=darkmagenta ctermfg=grey guibg=darkred guifg=white
+hi CursorLine cterm=NONE ctermbg=0 ctermfg=NONE
 
 if exists('$ITERM_PROFILE')
     if exists('$TMUX')
