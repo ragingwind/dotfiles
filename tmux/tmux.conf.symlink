@@ -25,12 +25,12 @@ bind \ split-window -v
 # unbind [
 # unbind ]
 bind p paste-buffer
-bind-key -t vi-copy 'v' begin-selection
-bind-key -t vi-copy 'y' copy-selection
-bind-key -t vi-copy 'c' copy-selection
-bind-key -t vi-copy 'C-v' rectangle-toggle
-bind-key -t vi-copy 'V' rectangle-toggle
-bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection
+bind-key -T copy-mode-vi 'c' send -X copy-selection
+# bind-key -T copy-mode-vi 'C-v' rectangle-toggle
+# bind-key -T copy-mode-vi 'V' rectangle-toggle
+bind-key -T copy-mode-vi y copy-pipe "reattach-to-user-namespace pbcopy"
 
 # clear history
 bind k clear-history -t:.
