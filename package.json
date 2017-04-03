@@ -4,7 +4,11 @@
     "node": ">= 6"
   },
   "scripts": {
-    "start": "path-symlink-cli '**/*.symlink' 'local/*' $HOME --strip"
+    "brew": "brew bundle",
+    "symlink": "path-symlink-cli '**/*.symlink' 'local/*' $HOME --strip",
+    "vundle": "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim",
+    "config:macos": "source .macos",
+    "start": "npm run symlink && npm run vundle && npm run brew"
   },
   "devDependencies": {
     "path-symlink-cli": "0.0.1"
