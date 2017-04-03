@@ -10,35 +10,27 @@ fi
 # nvm & node.js stable version
 if test ! -d ~/.nvm; then
   echo "nvm and node.js lts version will be installed"
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
-  [ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
+
+  export NVM_DIR="$HOME/.nvm" && (
+    git clone https://github.com/creationix/nvm.git "$NVM_DIR"
+    cd "$NVM_DIR"
+    git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
+  ) && . "$NVM_DIR/nvm.sh"
+
   nvm install --lts
   nvm alias default node
 fi
 
-# configs for target OS
+# brew for macOS
 if [ "$(uname -s)" == "Darwin" ]; then
+  echo "brew will be installed"
   if test ! $(which brew); then
     echo "brew will be installed"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
-
-  # install shell-bin not existing on macOS
-  brew install tree
-
-  # install and change shell into zsh
-  brew install zsh
-  brew install tmux
-
-  # update macos environment
-  source .macos
-elif [ "$(uname -s)" == "Darwin" ]; then
-  source .linux
 fi
 
-# setup node and excute install script
+# setup node and run scripts
 [ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
 nvm alias default node
 npm install && npm start
-
-
