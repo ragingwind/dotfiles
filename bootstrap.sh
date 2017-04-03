@@ -16,7 +16,7 @@ if test ! -d ~/.nvm; then
   nvm alias default node
 fi
 
-# brew
+# configs for target OS
 if [ "$(uname -s)" == "Darwin" ]; then
   if test ! $(which brew); then
     echo "brew will be installed"
@@ -32,19 +32,13 @@ if [ "$(uname -s)" == "Darwin" ]; then
 
   # update macos environment
   source .macos
-fi
-
-# configuration for linux
-if [ "$(uname -s)" == "Linux" ]; then
-  sudo chown -R $USER /usr/local/lib/node_modules
-  sudo chown -R $USER /usr/local/share
-  sudo chown -R $USER /usr/local/bin
-  sudo chmod -R 755 /usr/local/share/zsh/site-functions
-  sudo chown -R root /usr/local/share/zsh/site-functions
+elif [ "$(uname -s)" == "Darwin" ]; then
+  source .linux
 fi
 
 # setup node and excute install script
 [ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
 nvm alias default node
 npm install && npm start
+
 
