@@ -4,6 +4,7 @@ tap 'caskroom/versions'
 tap 'caskroom/fonts'
 
 # bin
+brew 'vim'
 brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-autosuggestions'
