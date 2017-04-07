@@ -2,28 +2,37 @@ set nocompatible
 syntax enable
 filetype plugin indent on
 
-" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"auto-install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall
+endif
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'tpope/vim-surround'
-Bundle "pangloss/vim-javascript"
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'grep.vim'
-Bundle 'rking/ag.vim'
-Bundle 'sjl/vitality.vim'
-Bundle 'slim-template/vim-slim'
-" Bundle 'scrooloose/nerdtree'
-" Bundle 'jistr/vim-nerdtree-tabs'
-
-call vundle#end()
+call plug#begin('~/.vim/bundle')
+" HTML Handyman
+Plug 'rstacruz/sparkup'
+" Searching for Everywhere
+Plug 'vim-scripts/L9'
+Plug 'vim-scripts/FuzzyFinder'
+" Editorconfig for Keeping Align
+Plug 'editorconfig/editorconfig-vim'
+" Surroundings Managing
+Plug 'tpope/vim-surround'
+" Javascript Syntax Highlighting and more
+Plug 'pangloss/vim-javascript'
+" Multiple Cursor
+Plug 'terryma/vim-multiple-cursors'
+" Go for Vim
+Plug 'jnwhiteh/vim-golang'
+" Grep for Vim
+Plug 'vim-scripts/grep.vim'
+" Focus/Unfocus Manager
+Plug 'sjl/vitality.vim'
+" Syntax highlighting
+Plug 'slim-template/vim-slim'
+" Plug 'scrooloose/nerdtree'
+" Plug 'jistr/vim-nerdtree-tabs'
+call plug#end()
 
 set encoding=utf8
 set showcmd
