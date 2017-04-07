@@ -158,7 +158,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 sudo systemsetup -settimezone "Asia/Seoul" > /dev/null
 
 # sound
-defaults write .GlobalPreferences com.apple.sound.beep.volume 0.0
+defaults write .GlobalPreferences com.apple.sound.beep.volume -float 0.0
 
 # -----------------------------------------------------------------------------
 # finder and bundled apps
