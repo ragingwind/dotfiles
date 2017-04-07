@@ -2,15 +2,25 @@
 
 > dotfiles for @ragingwind
 
-## Quick Start for macOS
+## Verbose Command for macOS
 
 ```sh
 # bootstrap to install essential applications
 sh ./bootstrap.sh
 
+# make symlinks for private and mackup
+sn ~/Google Drive/.dotfiles/* ~/dotfiles/mackup* $HOME --hidden
+
 # configure macOS envrionment, system and apps you installed
 sh ./macos.sh
 ```
+
+# npm predefined script
+
+```sh
+npm start
+```
+
 ## How I Do Setup macOS
 
 ### Clone dotfiles
