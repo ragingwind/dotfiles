@@ -3,15 +3,11 @@
   "engines": {
     "node": ">= 6"
   },
-  "scripts": {
-    "brew": "brew bundle",
-    "symlinks:local": "path-symlink-cli 'local/*' $HOME --strip",
-    "symlinks": "path-symlink-cli '**/*.symlink' $HOME --strip",
-    "vundle": "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim",
-    "start:macos": "npm run symlink && npm run symlinks:local && npm run vundle && npm run brew && source .macos",
-    "start:linux": "npm run symlink && npm run symlinks:local && npm run vundle && souce .linux"
+  "options": {
+    "storage": "$HOME/Google Drive/.dotfiles/*"
   },
-  "devDependencies": {
-    "path-symlink-cli": "0.0.1"
+  "scripts": {
+    "sn": "sn \"$npm_package_options_storage\" mackup* $HOME --hidden",
+    "start": "sh ./bootstrap.sh && npm run sn $& sh macos.sh"
   }
 }
