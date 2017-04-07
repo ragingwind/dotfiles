@@ -1,36 +1,42 @@
 #!/bin/bash
 
+# target path
+export RVM_DIR="$HOME/.rvm"
+export NVM_DIR="$HOME/.nvm"
+
 # rvm and ruby stable version
 if test ! -d ~/.rvm; then
-  echo "rvm and ruby stable version will be installed"
   curl -sSL https://get.rvm.io | bash -s stable --ruby
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+  [[ -s "$RVM_DIR/scripts/rvm" ]] && source "$RVM_DIR/scripts/rvm"
 fi
 
 # nvm & node.js stable version
 if test ! -d ~/.nvm; then
-  echo "nvm and node.js lts version will be installed"
+  git clone https://github.com/creationix/nvm.git "$NVM_DIR"
+  cd "$NVM_DIR"
+  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-  export NVM_DIR="$HOME/.nvm" && (
-    git clone https://github.com/creationix/nvm.git "$NVM_DIR"
-    cd "$NVM_DIR"
-    git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
-  ) && . "$NVM_DIR/nvm.sh"
-
+  # install node lts version as default
   nvm install --lts
   nvm alias default node
+
+  # install yarn to make its as default package manager
+  npm install -g yarn
+
+  # install essential setting tools
+  npm install -g @moonandyou/symlinks-cli
 fi
 
 # brew for macOS
 if [ "$(uname -s)" == "Darwin" ]; then
-  echo "brew will be installed"
   if test ! $(which brew); then
-    echo "brew will be installed"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
+
+  brew tap homebrew/bundle
+  brew bundle
 fi
 
-# setup node and run scripts
-[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"
-nvm alias default node
-npm install
+# change shell
+chsh -s $(which zsh)
