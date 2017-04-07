@@ -40,11 +40,15 @@ When you can use git on terminal, do clone dotfiles project from github at root 
 We need to install a very few application firsly. It called `bootstraping`.
 
 - Get into `.dotfiles` just downloaded which you make sure that. Rest of restoration processes will happen in the path
-- Run `sh bootstrap.sh` to install essential application managers like**rvm**, managing multiple ruby versions**nvm**, managing multiple node.js versions**node.js lts version** will be installed**yarn**, is a knock-out, period!**essential setting tools** for [making symbolic link](https://www.npmjs.com/package/@moonandyou/symlinks-cli) of dotfiles**brew**, installatioan bundch of macOS at once. **only for macOS**
+- Run `sh bootstrap.sh` to install essential application managers like
+  - **rvm**, managing multiple ruby versions
+  - **nvm**, managing multiple node.js versions
+  - **node.js lts version** will be installed
+  - **yarn**, is a knock-out, period!
+  - **essential setting tools** for [making symbolic link](https://www.npmjs.com/package/@moonandyou/symlinks-cli) of dotfiles
+  - **brew**, installatioan bundch of macOS at once. **only for macOS**
 
-### Installation of macOS applications with Brew
-
-You can install all of essential applications on macOS via [brew](https://brew.sh/)/[cask](https://caskroom.github.io/), which also supports that set up fonts, MAS apps, development tools like compilers, runtimes, even IDEs and editors through. `Brewfile` in `~/.dotfiles` is a manifest for application list you want to install.
+And then, brew will works for installation of macOS applications. You can install all of essential applications on macOS via [brew](https://brew.sh/)/[cask](https://caskroom.github.io/), which also supports that set up fonts, MAS apps, development tools like compilers, runtimes, even IDEs and editors through. `Brewfile` in `~/.dotfiles` is a manifest for application list you want to install.
 
 - During in period of boostraping, `brew bundle` will be executed with` Brewfile`*In case of MAS apps is not in the list because of security issues*
 - Take a break. It could take so much time by your applications count and sizes in `Brewfile`
