@@ -4,7 +4,7 @@ tap 'caskroom/versions'
 tap 'caskroom/fonts'
 
 # bin
-brew 'vim'
+brew 'mackup'
 brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-autosuggestions'
@@ -15,6 +15,7 @@ brew 'coreutils'
 brew 'tree'
 brew 'mas'
 brew 'wget'
+brew 'vim'
 
 # utils
 cask 'alfred'
