@@ -395,6 +395,20 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0x56-0x60000</key>
+		<dict>
+			<key>Action</key>
+			<integer>41</integer>
+			<key>Text</key>
+			<string>{"ConvertUnicodePunctuation":true,"WaitForPrompts":false,"Substitution":"","EscapeForShell":false,"Base64":false,"TabStopSize":4,"Delay":0.01,"RemoveNewlines":false,"Regex":"","ConvertNewlines":true,"TabTransform":0,"BracketAllowed":false,"UseRegexSubstitution":false,"ChunkSize":1024,"RemoveControls":true}</string>
+		</dict>
+		<key>0x9-0x40000</key>
+		<dict>
+			<key>Action</key>
+			<integer>32</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
 		<key>0xf700-0x300000</key>
 		<dict>
 			<key>Action</key>
@@ -547,7 +561,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>921 1410 684 419 -567 1080 2560 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-265 1664 796 473 -350 1080 2560 1057 </string>
+	<string>-265 1625 796 473 -350 1080 2560 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 40 955 1017 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -3553,7 +3567,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/ragingwind/.dotfiles/macos/</string>
+	<string>/Users/ragingwind/.dotfiles/configs/</string>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
