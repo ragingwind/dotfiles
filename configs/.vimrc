@@ -7,21 +7,21 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Bundle 'gmarik/vundle'
-Plugin 'tpope/vim-fugitive'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'L9'
-Plugin 'FuzzyFinder'
-" Plugin 'scrooloose/nerdtree'
-" Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'tpope/vim-fugitive'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'L9'
+Bundle 'FuzzyFinder'
 Bundle 'editorconfig/editorconfig-vim'
-Plugin 'tpope/vim-surround'
+Bundle 'tpope/vim-surround'
 Bundle "pangloss/vim-javascript"
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'jnwhiteh/vim-golang'
-Plugin 'grep.vim'
-Plugin 'rking/ag.vim'
-Plugin 'sjl/vitality.vim'
-Plugin 'slim-template/vim-slim'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'grep.vim'
+Bundle 'rking/ag.vim'
+Bundle 'sjl/vitality.vim'
+Bundle 'slim-template/vim-slim'
+" Bundle 'scrooloose/nerdtree'
+" Bundle 'jistr/vim-nerdtree-tabs'
 
 call vundle#end()
 

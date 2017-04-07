@@ -1,0 +1,25 @@
+[user]
+	name = ragingwind
+	email = ragingwind@gmail.com
+[mergetool]
+	keepBackup = true
+[core]
+	excludesfile = ~/.gitignore
+	editor = /usr/bin/vim
+[heroku]
+	account = ragingwind@gmail.com
+[alias]
+	vimdiff = difftool -y -t vimdiff -R
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[push]
+	default = matching
+[credential]
+	helper = cache
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

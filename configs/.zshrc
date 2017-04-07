@@ -1,5 +1,5 @@
 # ZSH
-ZSH=$HOME/.dotfiles
+ZSH=$HOME/.dotfiles/zsh
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
