@@ -38,11 +38,11 @@ sudo chflags uchg /private/var/vm/sleepimage
 # -----------------------------------------------------------------------------
 
 # env: change computer name
-sudo scutil --set ComputerName $USERNAME
-sudo scutil --set ComputerName $USERNAME
-sudo scutil --set HostName $USERNAME
-sudo scutil --set LocalHostName $USERNAME
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $USERNAME
+sudo scutil --set ComputerName $USER
+sudo scutil --set ComputerName $USER
+sudo scutil --set HostName $USER
+sudo scutil --set LocalHostName $USER
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $USER
 
 # env: set language and text formats
 defaults write NSGlobalDomain AppleLanguages -array "en-US" "ko-US"
@@ -112,12 +112,6 @@ defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
 
 # ui/ux: increase window resize speed for cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
-
-# ui/ux: menu bar unload items
-defaults -currentHost write dontAutoLoad -array \
-	"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-	"/System/Library/CoreServices/Menu Extras/Volume.menu" \
-	"/System/Library/CoreServices/Menu Extras/User.menu"
 
 # ui/ux: menu bar load items
 defaults write com.apple.systemuiserver menuExtras -array \
