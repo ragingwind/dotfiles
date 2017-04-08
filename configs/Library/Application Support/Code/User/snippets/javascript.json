@@ -1,0 +1,68 @@
+{
+/*
+	 // Place your snippets for JavaScript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	 // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	 // $1, $2 for tab stops, ${id} and ${id:label} and ${1:label} for variables. Variables with the same id are connected.
+	 // Example:
+	 "Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+	"key/value pair": {
+		"prefix": "kv",
+		"body": "${1:key}: ${2:'value'}"
+	},
+	"webpack config": {
+		"prefix": "wpc",
+		"body": [
+			"{",
+			"	entry: {",
+			"		main: ['${1:index}.js'],",
+			"	},",
+			"	output: {",
+			"		path: './${2:build}',",
+			"		filename: '${3:[name]}.js'",
+			"	},",
+			"	module: {",
+			"		loaders: [{",
+			"			test: /\\.${4:js}$/,",
+			"			include: './${5:src}',",
+			"			loaders: '${6:babel}-loader'",
+			"		}]",
+			"	},",
+			"	plugins: [],",
+			"	devServer: {",
+			"		contentBase: '${7:./public}',",
+			"		host: '${8:localhost}',",
+			"		port: ${9:8080}",
+			"	}",
+			"};"
+		]
+	},
+	"webpack loader": {
+		"prefix": "wpl",
+		"body": [
+			"{",
+			"	test: /\\.${1:ext}$/,",
+			"	loaders: '${2:name}-loader'",
+			"}"
+		]
+	},
+	"module named export": {
+		"prefix": "en",
+		"body": "export {default as ${1:name}} from '${2:module}'"
+	},
+	"console.log": {
+		"prefix": "cl",
+		"body": [
+			"console.log($1);"
+		],
+		"description": "Log output to console"
+	}
+}
+
