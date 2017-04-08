@@ -568,9 +568,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>921 1410 684 419 -567 1080 2560 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>-265 1603 796 473 -350 1080 2560 1057 </string>
+	<string>-265 1564 918 512 -350 1080 2560 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 40 955 1017 0 0 1920 1058 </string>
+	<string>-94 1206 2042 826 -350 1080 2560 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-224 1187 570 402 -567 1080 2560 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_D2E87B58-1EF4-4B60-8773-F02D2E3DA41C</key>
@@ -893,7 +893,7 @@
 			<key>Cursor Type</key>
 			<integer>1</integer>
 			<key>Custom Command</key>
-			<string>Yes</string>
+			<string>No</string>
 			<key>Custom Directory</key>
 			<string>No</string>
 			<key>Default Bookmark</key>
