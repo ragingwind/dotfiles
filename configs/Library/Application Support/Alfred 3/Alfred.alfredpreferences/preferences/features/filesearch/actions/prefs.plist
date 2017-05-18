@@ -10,10 +10,17 @@
 		<true/>
 		<key>alfred.action.emailto</key>
 		<true/>
-		<key>alfred.action.findsimilar</key>
-		<true/>
 		<key>alfred.action.recent</key>
 		<true/>
+	</dict>
+	<key>finderSelectionHotkey</key>
+	<dict>
+		<key>key</key>
+		<integer>0</integer>
+		<key>mod</key>
+		<integer>0</integer>
+		<key>string</key>
+		<string></string>
 	</dict>
 	<key>showWithCtrl</key>
 	<false/>

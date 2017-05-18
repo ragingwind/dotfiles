@@ -15,6 +15,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
@@ -23,6 +25,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>82E5133A-F114-4C1D-9FD4-365C395B6DF1</key>
@@ -34,6 +38,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>FE7E3DAE-D8FF-4C84-AC14-4A1D11A10904</key>
@@ -45,6 +51,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -61,6 +69,8 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
@@ -153,6 +163,10 @@ if ('http' in last_output):
     print(last_output, end='')
 else:
     print('Error: '+ last_output, end='')</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>type</key>
 				<integer>3</integer>
 			</dict>
@@ -160,6 +174,8 @@ else:
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>29221F47-9904-4EE7-AAF9-D300BAFAF2EF</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -168,11 +184,15 @@ else:
 				<true/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
 			<string>162D1E3F-9D73-4C83-AD8C-869165521442</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -181,25 +201,47 @@ else:
 				<integer>0</integer>
 				<key>argument</key>
 				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
 			<string>82E5133A-F114-4C1D-9FD4-365C395B6DF1</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
 				<string>short</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>Loading services list.</string>
 				<key>script</key>
@@ -239,6 +281,10 @@ for title in api:
         arg='{"type":"'+api[title]['title']+'","api_url":"'+api[title]['api_url']+'","long_url":"'+query+'"}',icon='favicons/'+api[title]['title']+'.png')
 print fb
 </string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>subtext</key>
 				<string>Include goo.gl, bit.ly, t.cn, j.mp, is.gd, v.gd, git.io etc.</string>
 				<key>title</key>
@@ -252,6 +298,8 @@ print fb
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>FE7E3DAE-D8FF-4C84-AC14-4A1D11A10904</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -260,11 +308,7 @@ print fb
 				<false/>
 				<key>onlyshowifquerypopulated</key>
 				<false/>
-				<key>output</key>
-				<integer>0</integer>
 				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
 				<false/>
 				<key>text</key>
 				<string>Copied to Clipboard!</string>
@@ -275,6 +319,8 @@ print fb
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>82524AB3-0487-48D7-9CB8-7A456D78F473</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -297,26 +343,36 @@ This workflow support URL shortener like (goo.gl, bit.ly, t.cn, j.mp, is.gd, v.g
 	<dict>
 		<key>162D1E3F-9D73-4C83-AD8C-869165521442</key>
 		<dict>
+			<key>xpos</key>
+			<integer>700</integer>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
 		<key>29221F47-9904-4EE7-AAF9-D300BAFAF2EF</key>
 		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
 		<key>82524AB3-0487-48D7-9CB8-7A456D78F473</key>
 		<dict>
+			<key>xpos</key>
+			<integer>700</integer>
 			<key>ypos</key>
 			<real>130</real>
 		</dict>
 		<key>82E5133A-F114-4C1D-9FD4-365C395B6DF1</key>
 		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
 		<key>FE7E3DAE-D8FF-4C84-AC14-4A1D11A10904</key>
 		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>

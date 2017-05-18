@@ -27,7 +27,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Daym Dictionary</string>
+	<string>Daum Dictionary</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -40,7 +40,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>Dayn Dictionary</string>
+				<string>Daum Dictionary</string>
 				<key>withspace</key>
 				<true/>
 			</dict>

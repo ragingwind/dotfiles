@@ -22,5 +22,28 @@
 	{ "key": "cmd+l cmd+l",       "command": "workbench.action.focusNextGroup" },
 	{ "key": "cmd+l cmd+k",        "command": "workbench.action.focusPreviousGroup" },
 	{ "key": "ctrl+2",                 "command": "workbench.action.focusSecondEditorGroup" },
-	{ "key": "cmd+9",                 "command": "workbench.action.focusSideBar" }
+	{
+		"key": "cmd+9",
+		"command": "workbench.action.focusSideBar"
+	},
+	{
+		"key": "cmd+l",
+		"command": "workbench.action.gotoLine"
+	},
+	{
+		"key": "ctrl+g",
+		"command": "-workbench.action.gotoLine"
+	},
+	{
+		"key": "cmd+n",
+		"command": "explorer.newFile"
+	},
+	{
+		"key": "alt+cmd+n",
+		"command": "workbench.action.files.newUntitledFile"
+	},
+	{
+		"key": "cmd+n",
+		"command": "-workbench.action.files.newUntitledFile"
+	}
 ]

@@ -32,6 +32,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>CBF6A897-9713-49B4-BDF1-BED7FEBB0559</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>vim</string>
+			<key>text</key>
+			<string>vim</string>
+			<key>url</key>
+			<string>http://vim.wikia.com/wiki/Special:Search?search={query}&amp;go=Try+exact</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

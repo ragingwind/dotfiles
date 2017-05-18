@@ -3,10 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>me.ragingwind.alfred.english-learning-dictionary</string>
+	<key>category</key>
+	<string>Tools</string>
 	<key>connections</key>
 	<dict>
-		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
+		<key>587B8A49-4488-4E19-9F8A-9D98E74EB512</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -19,28 +21,60 @@
 				<false/>
 			</dict>
 		</array>
+		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>587B8A49-4488-4E19-9F8A-9D98E74EB512</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
-	<string></string>
+	<string>Jimmy Moon</string>
 	<key>description</key>
-	<string></string>
+	<string>영어학습사전 검색</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Impact Dictionary</string>
+	<string>English Learning Dictionary</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>http://dic.impact.pe.kr/ecmaster-cgi/search.cgi?kwd={query}&amp;bool=and&amp;word=no</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>11D5721D-E45C-4D45-82C8-2CC370002271</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>di</string>
+				<string>ed</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>Impact Dictionary</string>
+				<string>English Learning Dictionary</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -54,21 +88,30 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys
+import unicodedata
+
+query = unicodedata.normalize('NFC', unicode(sys.argv[1], 'utf-8')).encode('euc-kr')
+
+sys.stdout.write(query)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
 				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>http://dic.impact.pe.kr/ecmaster-cgi/search.cgi?kwd={query}&amp;bool=and&amp;word=yes</string>
-				<key>utf8</key>
-				<true/>
+				<key>type</key>
+				<integer>3</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>11D5721D-E45C-4D45-82C8-2CC370002271</string>
+			<string>587B8A49-4488-4E19-9F8A-9D98E74EB512</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -78,19 +121,26 @@
 		<key>11D5721D-E45C-4D45-82C8-2CC370002271</key>
 		<dict>
 			<key>xpos</key>
-			<integer>500</integer>
+			<integer>580</integer>
 			<key>ypos</key>
-			<real>60</real>
+			<integer>100</integer>
+		</dict>
+		<key>587B8A49-4488-4E19-9F8A-9D98E74EB512</key>
+		<dict>
+			<key>xpos</key>
+			<integer>340</integer>
+			<key>ypos</key>
+			<integer>100</integer>
 		</dict>
 		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>80</integer>
 			<key>ypos</key>
-			<real>60</real>
+			<integer>100</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string></string>
+	<string>http://ragingwind.me</string>
 </dict>
 </plist>

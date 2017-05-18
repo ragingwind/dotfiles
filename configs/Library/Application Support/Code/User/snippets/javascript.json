@@ -22,19 +22,13 @@
 		"body": [
 			"{",
 			"	entry: {",
-			"		main: ['${1:index}.js'],",
+			"		main: ['${1:index}.js']",
 			"	},",
 			"	output: {",
-			"		path: './${2:build}',",
+			"		path: ${2:path.resolve(__dirname, './build')},",
 			"		filename: '${3:[name]}.js'",
 			"	},",
-			"	module: {",
-			"		loaders: [{",
-			"			test: /\\.${4:js}$/,",
-			"			include: './${5:src}',",
-			"			loaders: '${6:babel}-loader'",
-			"		}]",
-			"	},",
+			"	module: {},",
 			"	plugins: [],",
 			"	devServer: {",
 			"		contentBase: '${7:./public}',",
@@ -50,6 +44,16 @@
 			"{",
 			"	test: /\\.${1:ext}$/,",
 			"	loaders: '${2:name}-loader'",
+			"}"
+		]
+	},
+	"webpack babel loader": {
+		"prefix": "wpbl",
+		"body": [
+			"{",
+			"	test: /\\.${1:js}$/,",
+			"	include: path.resolve(__dirname, './${2:src}'),",
+			"	loaders: '${3:babel}-loader'",
 			"}"
 		]
 	},
