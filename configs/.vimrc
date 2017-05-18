@@ -30,10 +30,21 @@ Plug 'vim-scripts/grep.vim'
 Plug 'sjl/vitality.vim'
 " Syntax highlighting
 Plug 'slim-template/vim-slim'
-" Plug 'scrooloose/nerdtree'
-" Plug 'jistr/vim-nerdtree-tabs'
+" Muiltiple select ctrl-v/p/n/esc
+Plug 'terryma/vim-multiple-cursors'
+" ediitorconfig
+Plug 'editorconfig/editorconfig-vim'
+" xo
+Plug 'sindresorhus/vim-xo'
+" themes
+Plug 'flazz/vim-colorschemes'
+Plug 'danilo-augusto/vim-afterglow'
+" autocomplete
+Plug 'shougo/neocomplete.vim'
+Plug 'matze/vim-move'
 call plug#end()
 
+" set attributes
 set encoding=utf8
 set showcmd
 set showmode
@@ -41,67 +52,38 @@ set showmatch
 set backspace=indent,eol,start
 set number
 set incsearch
-set hlsearch
 set ignorecase
 set smartcase
-set nostartofline
 set textwidth=80
-
-set nowrap
-set textwidth=0 wrapmargin=0
+set wrapmargin=0
 set autoindent
 set smartindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
-set noerrorbells visualbell t_vb=
 set autoread
+set list
+set listchars=eol:¸,tab:>·,trail:·,extends:>,precedes:<,space:·
 
+" unset attributes
+set nostartofline
+set nowrap
+set noerrorbells visualbell t_vb=
+set nohlsearch
+
+" ## REMAP COMMANDERS
+set pastetoggle=<leader>p
+
+" remap leader
 let mapleader = ','
 let g:mapleader = ','
 
-" NERDTree
-" autocmd vimenter * if !argc() | NERDTree | endi
-" autocmd vimenter * if 0 | NERDTree | endi
-let g:NERDChristmasTree=0
-let g:NERDTreeAutoCenter=1
-let g:NERDTreeHighlightCursorline=1
-let g:NERDTreeHijackNetrw=0
-let g:NERDTreeStatusline=1
-let g:NERDTreeWinSize=20
-let g:NERDTreeQuitOnOpen=0
+" tab navigation
+nmap <leader>tn :tabnew<CR>
+noremap <leader>ta :tabprevious<CR>
+noremap <leader>td :tabnext<CR>
 
-nmap <C-k> :NERDTreeTabsToggle<CR>
-imap <C-k> :NERDTreeTabsToggle<CR>
-
-" FuzzyFinder
-nmap <leader>fd :FufDir<CR>
-imap <leader>fd :FufDir<CR>
-map <leader>ff :FufFile */<CR>
-nmap <leader>ff :FufFile */<CR>
-map <leader>fa :FufFile **/<CR>
-nmap <leader>fa :FufFile **/<CR>
-nmap <leader>fb :FufBuffer<CR>
-imap <leader>fb <C-O>:FufBuffer<CR>
-nmap <leader>fn :tabnew \| :FufFile */<CR>
-imap <leader>fn :tabnew \| :FufFile */<CR>
-
-" indent for command mode
-nmap <S-Tab> <<
-nmap <Tab> >>
-imap <S-Tab> <Esc><<i
-vmap <Tab> >
-vmap <S-Tab> <
-
-" Tab commands and navigation
-nmap <leader>t :tabnew<CR>
-nmap <C-a> :tabprevious<CR>
-imap <C-a> <ESC>:tabprevious<CR>i
-nmap <C-b> :tabnext<CR>
-imap <C-b> <Esc>:tabnext<CR>i
-noremap <leader>a :tabprevious<CR>
-noremap <leader>d :tabnext<CR>
-
+" tab navigation directly
 noremap <leader>1 1gt
 noremap <leader>2 2gt
 noremap <leader>3 3gt
@@ -113,82 +95,105 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 
-" Extend keys in visual mode
+" page up / down
+nmap <S-up> <C-u>
+nmap <S-down> <C-d>
+
+" delete selection on visual mode
 vnoremap <BS> d
+
+" copy alials
 vnoremap c y
-vnoremap v p
-vnoremap // y/<c-r>"<cr>
 
-" Bind keys for Windows experience
-nmap <C-q> :q<CR>
-nmap <C-s> :w<CR>
-vmap <C-s> <C-C>:w<CR>
-imap <C-s> <C-O>:w<CR>
-inoremap <C-z> <C-O>u
-nnoremap <C-z> <C-O>u
-
-nnoremap <leader>q :q<CR>
-nnoremap <leader>s :w<CR>
+" quit and quite all
+noremap <leader>q :q<CR>
 nnoremap <leader>Q :qa!<CR>
 
-" Utils
+" write the file
+nnoremap <leader>w :w<CR>
+nnoremap <leader>s :w<CR>
+inoremap <c-s> <ESC>:w<CR>i
+
+" reload cfg itself
 nnoremap <leader>re :source $HOME/.vimrc<CR>
 
-" (Redefine) Window navigation
-nnoremap <leader>, <c-w>w<CR>
-nnoremap <leader>wq <c-w>q<CR>
-nnoremap <leader>wn <c-w>n<CR>
-nnoremap <leader>wv :vsp<CR><c-w><c-r>
-nnoremap <leader>wr <c-w><c-r><CR>
-
-" Cursor
+" begin of the line
 nnoremap ` ^
 vnoremap ` ^
+
+" last of the line
 nnoremap 1 $
 vnoremap 1 $
 
-" Turn on these
-set nu
-set ar
+" indent for command mode
+nmap <S-Tab> <<
+nmap <Tab> >>
+imap <S-Tab> <Esc><<i
+vmap <Tab> >
+vmap <S-Tab> <
 
-set pastetoggle=<leader>pp
-
-" Cursor color
+" cursor line, ctermbg=0 is none
 set cursorline
-hi CursorLine cterm=NONE ctermbg=0 ctermfg=NONE
+hi CursorLine cterm=NONE ctermbg=darkgray ctermfg=NONE
+"
+" toggle show number:
+nnoremap <F3> :set invnumber<CR>
+inoremap <F3> <C-O>:set invnumber<CR>
 
-if exists('$ITERM_PROFILE')
-    if exists('$TMUX')
-        let &t_SI = "\<Esc>[3 q"
-        let &t_EI = "\<Esc>[0 q"
-    else
-        let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-        let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-    endif
-endif
+" ## EXTRA COMMANDS
 
-" Ag
-let g:ackprg = 'ag --nogroup --nocolor --column'
+" run this file with node
+noremap <leader>rn :!node %<CR>
 
-" Markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+" ## EXTERNAL SETTINGS
 
-" Multiple cursor
+" multiple cursor
 highlight multiple_cursors_cursor term=reverse cterm=reverse gui=reverse
 highlight link multiple_cursors_visual Visual
 
-" Diff
-if &diff
-highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
-endif
+" markdown autocmd
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
-" Run
-nmap <c-r>n :!node %<cr>
-
-
+" vitality plugin
 let g:vitality_fix_cursor = 1
 let g:vitality_fix_focus = 1
 let g:vitality_always_assume_iterm = 1
+
+" xo
+let g:syntastic_javascript_checkers = ['xo']
+
+" themes
+colorscheme afterglow
+
+" complete
+let g:neocomplete#enable_at_startup = 1
+
+" line move
+let g:move_key_modifier = 'C'
+
+" fixing look-and-feel
+if exists('$ITERM_PROFILE')
+  if exists('$TMUX')
+    let &t_SI = "\<Esc>[3 q"
+    let &t_EI = "\<Esc>[0 q"
+  else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  endif
+endif
+
+" fuzzy finder
+nmap <leader>fd :FufDir<CR>
+imap <leader>fd :FufDir<CR>
+map <leader>ff :FufFile ./<CR>
+nmap <leader>ff :FufFile ./<CR>
+nmap <leader>fa :FufFile */<CR>
+nmap <leader>fa :FufFile */<CR>
+map <leader>fg :FufFile **/<CR> "massive finding
+nmap <leader>fg :FufFile **/<CR "massive finding>
+map <leader>fb :FufBuffer<CR>
+imap <leader>fb <C-O>:FufBuffer<CR>
+imap <leader>fn :tabnew \| :FufFile ./<CR>
+nmap <leader>fn :tabnew \| :FufFile ./<CR>
+
+

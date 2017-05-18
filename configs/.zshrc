@@ -44,6 +44,7 @@ then
   source ~/.localrc
 fi
 
-
-export NVM_DIR="/Users/ragingwind/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# exports configs
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fpath=(/usr/local/share/zsh-completions/src $fpath)
