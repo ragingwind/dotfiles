@@ -37,7 +37,7 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 setopt complete_aliases
 
-# Reclaim CTRL-S and CTRL-Q key bindings 
+# Reclaim CTRL-S and CTRL-Q key bindings
 stty -ixon -ixoff
 
 #bindkey '^[[1;5D' backward-word
@@ -82,7 +82,7 @@ alias 8='cd +8'
 alias 9='cd +9'
 
 alias md='mkdir -p'
-alias rd=rmdir
+alias rd='rm -rf'
 alias d='dirs -v | head -10'
 
 # LIST DIRECORY CONTENTS
@@ -92,9 +92,16 @@ alias ll='ls -l'
 alias la='ls -lA'
 alias sl=ls # often screw this up
 
+# tree
+alias tree1='tree -L 1'
+alias tree2='tree -L 2'
 alias treed='tree -d -L 1'
 alias treed2='tree -d -L 2'
 
+#touch
+alias tc='touch'
+alias t='touch'
+alias mf='touch'
 
 # DIRECTORY
 mkcd() { mkdir -p "$@" && cd "$_"; }
@@ -138,6 +145,12 @@ rmpyc() {
 # DIFF
 function diff {
     colordiff -u "$@" | less -RF
+}
+
+di() {
+  query=$(echo $1 | iconv -f utf-8 -t euc-kr)
+  curl -s -G -H "Content-Type: text/html; charset=euc-kr" 'http://dic.impact.pe.kr/ecmaster-cgi/search.cgi?bool=and&word=yes' \
+    --data-urlencode "kwd=$query" > $TMPDIR/index.html && open $TMPDIR/index.html
 }
 
 # -----------------------------------------------------------------------------
