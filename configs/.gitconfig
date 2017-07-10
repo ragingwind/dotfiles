@@ -1,5 +1,5 @@
 [user]
-	name = ragingwind
+	name = Jimmy Moin
 	email = ragingwind@gmail.com
 [mergetool]
 	keepBackup = true
@@ -19,7 +19,7 @@
 [credential]
 	helper = cache
 [filter "lfs"]
-	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+	required = true
