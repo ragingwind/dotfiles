@@ -65,4 +65,4 @@ precmd() {
 # Prompt turns red if the previous command didn't exit with 0
 PROMPT='%(?.%F{magenta}.%F{red})>%f '
 # Can be disabled:
-# PROMPT='%F{magenta}>>
+# PROMPT='%F{red}>%f '
