@@ -14,4 +14,28 @@
 		"description": "Log output to console"
 	}
 */
+	"style jsx": {
+		"prefix": "sjsx",
+		"body": [
+			"<style jsx>{`",
+			"`}</style>"
+		]
+	},
+	"export default array": {
+		"prefix": "eda",
+		"body": [
+			"export default ({$1}) => (",
+			"	<div>",
+			"	</div>",
+			")"
+		]
+	},
+	"static async getInitialProps": {
+		"prefix": "sgi",
+		"body": [
+			"static async getInitialProps({$1}) {",
+			"	return {}",
+			"}"
+		]
+	}
 }
