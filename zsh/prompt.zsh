@@ -56,13 +56,13 @@ precmd() {
   # Check status of virsion control
   vcs_info
   # Add `%*` to display the time
-  print -P '\n%F{blue}%~%F{yellow}$vcs_info_msg_0_`git_dirty`%f %F{white}$username%f %F{cyan}`cmd_exec_time`%f'
+  # print -P '\n%F{blue}%~%F{yellow}$vcs_info_msg_0_`git_dirty`%f %F{white}$username%f %F{cyan}`cmd_exec_time`%f'
   # Reset value since `preexec` isn't always triggered
   # unset start_time
   start_time=$SECONDS
 }
 
 # Prompt turns red if the previous command didn't exit with 0
-PROMPT='%(?.%F{magenta}.%F{red})>%f '
+# PROMPT='%(?.%F{magenta}.%F{red})>%f '
 # Can be disabled:
-# PROMPT='%F{red}>%f '
+PROMPT='%F{red}>%f '

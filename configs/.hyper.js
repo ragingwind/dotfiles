@@ -32,7 +32,10 @@ module.exports = {
     css: '',
 
     // custom css to embed in the terminal window
-    termCSS: 'x-row {font-weight: 100}',
+    termCSS: `
+      x-screen a {color: red}
+      x-row {font-weight: 200}
+    `,
 
     // set to `true` (without backt:qicks) if you're using a Linux setup that doesn't show native menus
     // default: `false` on Linux, `true` on Windows (ignored on macOS)
@@ -130,11 +133,16 @@ module.exports = {
   plugins: [
     "hyperterm-visor",
     "hyperterm-cursor",
-    "hyper-pane"
+    "hyper-pane",
+    "hyperlinks",
+    "hyper-snazzy"
   ],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
   localPlugins: [],
+  hyperlinks: {
+    defaultBrowser: false
+  }
 };

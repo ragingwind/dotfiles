@@ -5,18 +5,12 @@
 ## Quick Starts for dotfiles
 
 ```sh
-npm start
-```
-
-## Command Details for macOS
-
-```sh
 # bootstrap to install essential applications
 sh ./bootstrap.sh
 
 # make symlinks for private and mackup as dotstyle
 # ex) ./.dotfiles/zshrc > ~/.zshrc, ./.dotfiles/ssh > ~/.ssh
-sn ~/Google Drive/.dotfiles/* ~/dotfiles/mackup* $HOME --hidden
+sn ~/Google Drive/.dotfiles/* ~/.dotfiles/mackup* $HOME --hidden
 
 # configure macOS envrionment, system and apps you installed
 sh ./macos.sh

@@ -16,6 +16,7 @@ if test ! -d ~/.nvm; then
   cd "$NVM_DIR"
   git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+  cd -
 
   # install node lts version as default
   nvm install --lts

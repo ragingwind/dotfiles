@@ -146,5 +146,21 @@
 	{
 		"key": "cmd+0",
 		"command": "workbench.action.terminal.focusPrevious"
+	},
+	{
+		"key": "cmd+0",
+		"command": "workbench.action.openLastEditorInGroup"
+	},
+	{
+		"key": "ctrl+0",
+		"command": "-workbench.action.openLastEditorInGroup"
+	},
+	{
+		"key": "cmd+k right",
+		"command": "workbench.action.splitEditor"
+	},
+	{
+		"key": "cmd+k left",
+		"command": "-workbench.action.splitEditor"
 	}
 ]
