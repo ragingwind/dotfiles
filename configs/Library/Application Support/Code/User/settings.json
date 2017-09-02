@@ -1,8 +1,8 @@
 {
   "window.zoomLevel": 0,
   "editor.fontFamily": "Fira Code",
-  // "editor.fontFamily": "Source Code Pro",
-  // "editor.fontFamily": "Source Code Pro for Powerline",
+  "editor.fontFamily": "Source Code Pro",
+  "editor.fontFamily": "Source Code Pro for Powerline",
   "editor.fontWeight": "200",
   // "editor.fontLigatures": true,
   "editor.tabSize": 2,

@@ -21,7 +21,6 @@ brew 'vim'
 cask 'alfred'
 cask 'bettertouchtool'
 cask 'amazon-drive'
-cask 'google-drive'
 cask 'licecap'
 cask 'skype'
 cask 'slack'
@@ -45,8 +44,6 @@ cask 'google-chrome-canary'
 cask 'chromium'
 cask 'safari-technology-preview'
 cask 'firefox'
-cask 'firefox-beta' # error
-cask 'firefoxdeveloperedition' # error
 cask 'firefoxnightly'
 cask 'torbrowser'
 
