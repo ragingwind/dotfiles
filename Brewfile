@@ -37,6 +37,7 @@ cask 'disk-inventory-x'
 cask 'spotify'
 cask 'gyazo'
 cask 'microsoft-remote-desktop-beta'
+cask 'typora'
 
 # browsers
 cask 'google-chrome'
