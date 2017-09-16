@@ -47,6 +47,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/context_filetype.vim'
 Plug 'justinj/vim-react-snippets'
+Plug 'itchyny/vim-cursorword'
 let g:jsx_ext_required = 0
 call plug#end()
 
@@ -185,10 +186,9 @@ inoremap <S-Tab> <C-o><<i
 vnoremap <Tab> >>
 vnoremap <S-Tab> <<
 
-" cursor line, ctermbg=0 is none
-set cursorline
-hi CursorLine cterm=NONE ctermbg=darkgray ctermfg=NONE
-"
+" set termbg
+set t_Co=282A36
+
 " toggle show number:
 nnoremap <F3> :set invnumber<CR>
 inoremap <F3> <C-O>:set invnumber<CR>
