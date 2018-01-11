@@ -40,4 +40,4 @@ if [ "$(uname -s)" == "Darwin" ]; then
 fi
 
 # change shell
-chsh -s $(which zsh)
+chsh -s $(/bin/zsh)
