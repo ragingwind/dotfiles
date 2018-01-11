@@ -1,5 +1,5 @@
 {
-  "window.zoomLevel": -1,
+"window.zoomLevel": 0,
   "editor.fontFamily": "Fira Code",
   // "editor.fontFamily": "Source Code Pro",
   "editor.fontWeight": "200",
@@ -9,15 +9,15 @@
   "editor.renderWhitespace": "all",
   "editor.renderIndentGuides": false,
   "editor.insertSpaces": true,
-  "editor.fontSize": 16,
+  "editor.fontSize": 17,
   "editor.cursorStyle": "line",
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
   "terminal.integrated.rightClickCopyPaste": true,
-  "terminal.integrated.fontLigatures": false,
+  // "terminal.integrated.fontLigatures": false,
   // "terminal.integrated.fontFamily": "Fira Code",
   "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
-  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontSize": 17,
   "terminal.integrated.lineHeight": 1.1,
   "terminal.integrated.enableBold": false,
   "editor.autoClosingBrackets": true,
@@ -31,15 +31,15 @@
   "workbench.editor.enablePreview": false,
   "workbench.activityBar.visible": false,
   "workbench.statusBar.visible": true,
-  "emmet.useNewEmmet": true,
-  "xo.enable": false,
-  "xo.options": {
-    "semicolon": false,
-    "extensions": ["html"],
-    "rules": {
-      "capitalized-comments": ["error", "never"]
-    }
-  },
+  // "emmet.useNewEmmet": true,
+  // "xo.enable": false,
+  // "xo.options": {
+  //   "semicolon": false,
+  //   "extensions": ["html"],
+  //   "rules": {
+  //     "capitalized-comments": ["error", "never"]
+  //   }
+  // },
   "editor.renderControlCharacters": true,
   "workbench.sideBar.location": "left",
   "emmet.syntaxProfiles": {
@@ -52,10 +52,14 @@
   "editor.rulers": [94, 120],
   "zenMode.hideTabs": false,
   "git.enableSmartCommit": true,
-  "atomKeymap.promptV3Features": true,
+  // "atomKeymap.promptV3Features": true,
   "typescript.check.npmIsInstalled": false,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.fontAliasing": "antialiased",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "vscode-icons",
   "workbench.colorTheme": "Snazzy Operator",
+  "workbench.panel.location": "bottom",
+  "vsicons.dontShowNewVersionMessage": true,
+"javascript.validate.enable": false,
+"explorer.confirmDragAndDrop": false
 }

@@ -5,10 +5,10 @@
 module.exports = {
   config: {
     // default font size in pixels for all tabs
-    fontSize: 20,
+    fontSize: 17,
 
     // font family with optional fallbacks
-    fontFamily: '""Fira Code", "Source Code Pro for Powerline", Roboto Mono", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"Fira Code", "Source Code Pro for Powerline", "Roboto Mono", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(255, 255, 255, 1)',
@@ -76,7 +76,7 @@ module.exports = {
     // make sure to use a full path if the binary name doesn't work
     // (e.g `C:\\Windows\\System32\\bash.exe` instead of just `bash.exe`)
     // if you're using powershell, make sure to remove the `--login` below
-    shell: '',
+    shell: '/usr/local/bin/zsh',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
     // by default ['--login'] will be used
@@ -131,9 +131,9 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
+    "hyper-pane",
     "hyperterm-visor",
     "hyperterm-cursor",
-    "hyper-pane",
     "hyperlinks",
     "hyper-snazzy"
   ],

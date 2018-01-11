@@ -106,7 +106,7 @@
 		"command": "git.commit"
 	},
 	{
-		"key": "ctrl+k",
+		"key": "cmd+k cmd+k",
 		"command": "workbench.action.terminal.clear",
 		"when": "terminalFocus"
 	},
