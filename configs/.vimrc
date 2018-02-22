@@ -38,7 +38,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'sindresorhus/vim-xo'
 " themes
 Plug 'flazz/vim-colorschemes'
-Plug 'danilo-augusto/vim-afterglow'
+" Plug 'danilo-augusto/vim-afterglow'
 Plug 't9md/vim-textmanip'
 " autocomplete
 Plug 'Shougo/neocomplete'
@@ -68,9 +68,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set autoread
-"set list
-"set listchars=tab:__,trail:·,extends:>,precedes:<,space:·
-set nolist
+set list
+set listchars=tab:__,trail:·,extends:>,precedes:<,space:·
+" set nolist
 set statusline="%f%m%r%h%w [%Y] [0x%02.2B]%< %F%=%4v,%4l %3p%% of %L"
 set laststatus=2
 
@@ -194,7 +194,8 @@ nnoremap <F3> :set invnumber<CR>
 inoremap <F3> <C-O>:set invnumber<CR>
 
 " themes
-colorscheme afterglow
+" colorscheme afterglow
+colorscheme minimalist
 
 " fixing look-and-feel
 if exists('$ITERM_PROFILE')
@@ -293,12 +294,16 @@ map <ESC>[5D <C-Left>
 map <ESC>[5C <C-Right>
 map! <ESC>[5D <C-Left>
 map! <ESC>[5C <C-Right>
-xmap <Space>d <Plug>(textmanip-duplicate-down)
-nmap <Space>d <Plug>(textmanip-duplicate-down)
-xmap <Space>D <Plug>(textmanip-duplicate-up)
-nmap <Space>D <Plug>(textmanip-duplicate-up)
+xmap <S-down> <Plug>(textmanip-duplicate-down)
+nmap <S-down> <Plug>(textmanip-duplicate-down)
+xmap <S-up> <plug>(textmanip-duplicate-up)
+nmap <S-up> <Plug>(textmanip-duplicate-up)
 nmap <F10> <Plug>(textmanip-toggle-mode)
 xmap <F10> <Plug>(textmanip-toggle-mode)
 xmap <C-down> <Plug>(textmanip-move-down)
+nmap <C-down> <Plug>(textmanip-move-down)
 xmap <C-up> <Plug>(textmanip-move-up)
-xmap <C-left> <Plug>(textmanip-move-left)
+nmap <C-up> <Plug>(textmanip-move-up)
+
+" customize theme
+hi SpecialKey ctermfg=59 ctermbg=NONE cterm=NONE guifg=#5F5F5F guibg=NONE gui=NONE
