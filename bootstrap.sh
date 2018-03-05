@@ -12,11 +12,16 @@ fi
 
 # nvm & node.js stable version
 if test ! -d ~/.nvm; then
-  git clone https://github.com/creationix/nvm.git "$NVM_DIR"
-  cd "$NVM_DIR"
-  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
-  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-  cd -
+  (
+    git clone https://github.com/creationix/nvm.git "$NVM_DIR"
+    cd "$NVM_DIR"
+    git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" origin`
+  ) && \. "$NVM_DIR/nvm.sh"
+
+  echo '
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+' >> $HOME/.profile
 
   # install node lts version as default
   nvm install --lts
@@ -39,5 +44,4 @@ if [ "$(uname -s)" == "Darwin" ]; then
   brew bundle
 fi
 
-# change shell
-chsh -s $(/bin/zsh)
+source $HOME/.profile
