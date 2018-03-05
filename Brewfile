@@ -48,7 +48,7 @@ cask 'google-chrome-canary'
 cask 'chromium'
 cask 'safari-technology-preview'
 cask 'firefox'
-cask 'firefoxnightly'
+cask 'firefox-nightly'
 cask 'torbrowser'
 
 # development
