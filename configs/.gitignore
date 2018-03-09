@@ -13,3 +13,4 @@ Thumbs.db
 .tags
 npm-debug.log
 .vscode
+yarn-error.log
