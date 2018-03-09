@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
 "window.zoomLevel": 1,
+=======
+  "window.zoomLevel": 0,
+>>>>>>> 63f6518719b517ddfb80057ae2d7f2ffc31dcf3a
   "editor.fontFamily": "Fira Code",
   // "editor.fontFamily": "Source Code Pro",
   "editor.fontWeight": "200",
@@ -19,7 +23,7 @@
   "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.1,
-  "terminal.integrated.enableBold": false,
+//   "terminal.integrated.enableBold": false,
   "editor.autoClosingBrackets": true,
   "editor.snippetSuggestions": "top",
   "editor.quickSuggestions": true,
@@ -52,14 +56,31 @@
   "editor.rulers": [94, 120],
   "zenMode.hideTabs": false,
   "git.enableSmartCommit": true,
-  // "atomKeymap.promptV3Features": true,
   "typescript.check.npmIsInstalled": false,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.fontAliasing": "antialiased",
+<<<<<<< HEAD
 "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Material Theme",
   "workbench.panel.location": "bottom",
   "vsicons.dontShowNewVersionMessage": true,
 "javascript.validate.enable": false,
 "explorer.confirmDragAndDrop": false
+=======
+  "javascript.validate.enable": false,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.colorCustomizations": 
+  {
+    "[Default Dark+]": {
+      "sideBar.background": "#1C1C1C",
+      "editorGroup.background" : "#1C1C1C",
+      "editor.background" : "#1C1C1C",
+      "sideBar.border": "#303030"
+    },
+    "statusBar.background" : "#303030",
+    "statusBar.noFolderBackground" : "#222225",
+    "statusBar.debuggingBackground": "#511f1f"
+  },
+  "workbench.iconTheme": "material-icon-theme"
+>>>>>>> 63f6518719b517ddfb80057ae2d7f2ffc31dcf3a
 }

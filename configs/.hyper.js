@@ -23,7 +23,7 @@ module.exports = {
     foregroundColor: '#eff0eb',
 
     // terminal background color
-    backgroundColor: 'rgb(0, 0, 0)',
+    backgroundColor: '#1C1C1C',
 
     // border color (window, tabs)
     borderColor: '#333',
@@ -132,10 +132,10 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     "hyper-pane",
-    "hyperterm-visor",
+    // "hyperterm-visor",
     "hyperterm-cursor",
     "hyperlinks",
-    "hyper-snazzy"
+    // "hyper-snazzy"
   ],
 
   // in development, you can create a directory under
