@@ -26,9 +26,9 @@ alias gundo='git reset HEAD@{1}'
 
 git-init() {
     git init
-    touch README.md
-    git add README.md
-    git commit -m "feat: add README doc"
+    touch readme.md
+    git add readme.md
+    git commit -m "add readme doc"
     git remote add origin "$@"
     git push -u origin master
 }
