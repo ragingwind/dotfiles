@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-"window.zoomLevel": 1,
-=======
-  "window.zoomLevel": 0,
->>>>>>> 63f6518719b517ddfb80057ae2d7f2ffc31dcf3a
+  "window.zoomLevel": 1,
   "editor.fontFamily": "Fira Code",
   // "editor.fontFamily": "Source Code Pro",
   "editor.fontWeight": "200",
@@ -59,14 +55,6 @@
   "typescript.check.npmIsInstalled": false,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.fontAliasing": "antialiased",
-<<<<<<< HEAD
-"workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Material Theme",
-  "workbench.panel.location": "bottom",
-  "vsicons.dontShowNewVersionMessage": true,
-"javascript.validate.enable": false,
-"explorer.confirmDragAndDrop": false
-=======
   "javascript.validate.enable": false,
   "explorer.confirmDragAndDrop": false,
   "workbench.colorCustomizations": 
@@ -81,6 +69,20 @@
     "statusBar.noFolderBackground" : "#222225",
     "statusBar.debuggingBackground": "#511f1f"
   },
-  "workbench.iconTheme": "material-icon-theme"
->>>>>>> 63f6518719b517ddfb80057ae2d7f2ffc31dcf3a
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.showUpdateMessage": false,
+  "editor.fontSize": 15,
+  "editor.tabSize": 2,
+  // "editor.renderWhitespace": "none",
+  "workbench.editor.enablePreview": false,
+  "workbench.activityBar.visible": false,
+  "workbench.statusBar.visible": false,
+  "editor.quickSuggestions": "false",
+  "emmet.syntaxProfiles": {
+    "javascript": "javascriptreact",
+    "xml": {
+        "attr_quotes": "single"
+    }
+  },
+  "workbench.editor.showTabs": false
 }
