@@ -6,6 +6,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	editor = /usr/bin/vim
+	precomposeUnicode = true
 [heroku]
 	account = ragingwind@gmail.com
 [alias]

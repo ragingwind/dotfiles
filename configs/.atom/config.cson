@@ -1,0 +1,21 @@
+"*":
+  core:
+    disabledPackages: [
+      "teletype"
+      "tree-view"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "base16-tomorrow-dark-theme"
+    ]
+    titleBar: "hidden"
+  editor:
+    fontFamily: "Fira Code"
+    fontSize: 15
+  "exception-reporting":
+    userId: "06c84d2c-f0b0-4a1c-b244-1ef930a698b1"
+  "status-bar":
+    isVisible: false
+  welcome:
+    showOnStartup: false

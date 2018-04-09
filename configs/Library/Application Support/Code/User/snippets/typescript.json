@@ -12,18 +12,11 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-<<<<<<< HEAD
-	"Print to console": {
-		"prefix": "log",
-		"body": [
-			"console.log($1);",
-=======
 
 	"Print to console": {
 		"prefix": "log",
 		"body": [
 			"console.log($1);"
->>>>>>> 63f6518719b517ddfb80057ae2d7f2ffc31dcf3a
 		],
 		"description": "Log output to console"
 	}
