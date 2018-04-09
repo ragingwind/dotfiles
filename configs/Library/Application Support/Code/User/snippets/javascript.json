@@ -61,12 +61,31 @@
 		"prefix": "en",
 		"body": "export {default as ${1:name}} from '${2:module}'"
 	},
+	"module default export": {
+		"prefix": "en",
+		"body": "export default $1"
+	},
 	"console.log": {
 		"prefix": "log",
 		"body": [
 			"console.log($1)"
 		],
 		"description": "Log output to console"
+	},
+	"import": {
+		"prefix": "im",
+		"body": [
+			"import {$2} from '$1'"
+		],
+		"description": ""
+	},
+	"<style jsx>": {
+		"prefix": "sjsx",
+		"body": [
+			"<style jsx>{`$1",
+			"`}</style>"
+		],
+		"description": ""
 	}
 }
 
