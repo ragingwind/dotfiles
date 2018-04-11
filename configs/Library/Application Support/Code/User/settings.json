@@ -15,8 +15,8 @@
   "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
   "terminal.integrated.rightClickCopyPaste": true,
   // "terminal.integrated.fontLigatures": false,
-  // "terminal.integrated.fontFamily": "Fira Code",
-  "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+  "terminal.integrated.fontFamily": "Fira Code",
+  // "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.1,
 //   "terminal.integrated.enableBold": false,
@@ -84,5 +84,5 @@
         "attr_quotes": "single"
     }
   },
-  "workbench.editor.showTabs": false
+  "workbench.editor.showTabs": true
 }
