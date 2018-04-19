@@ -123,7 +123,7 @@ cd () {
 # INSTANT SERVER
 pserver() {
   # @todo, set default port
-  python -m SimpleHTTPServer 8000 $1
+  python -m SimpleHTTPServer $2 $1
 }
 
 # NODE
