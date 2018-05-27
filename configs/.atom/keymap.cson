@@ -46,3 +46,6 @@
 
 # 'atom-text-editor.autocomplete-active:not([mini])':
 #   'tab': 'autocomplete-plus:confirm'
+
+'atom-text-editor[data-grammar="atom-text-editor"]:not([mini])':
+    'tab': 'emmet:expand-abbreviation-with-tab'

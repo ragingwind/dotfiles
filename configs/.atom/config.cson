@@ -12,7 +12,7 @@
     titleBar: "hidden"
   editor:
     fontFamily: "Fira Code"
-    fontSize: 15
+    fontSize: 22
   "exception-reporting":
     userId: "06c84d2c-f0b0-4a1c-b244-1ef930a698b1"
   "status-bar":
