@@ -29,7 +29,7 @@
   "editor.parameterHints": false,
   "editor.minimap.enabled": false,
   "workbench.editor.enablePreview": false,
-  "workbench.activityBar.visible": false,
+  "workbench.activityBar.visible": true,
   "workbench.statusBar.visible": true,
   // "emmet.useNewEmmet": true,
   // "xo.enable": false,
@@ -73,16 +73,38 @@
   "material-icon-theme.showUpdateMessage": false,
   "editor.fontSize": 15,
   "editor.tabSize": 2,
-  // "editor.renderWhitespace": "none",
+  "editor.renderWhitespace": "none",
   "workbench.editor.enablePreview": false,
   "workbench.activityBar.visible": false,
   "workbench.statusBar.visible": false,
-  "editor.quickSuggestions": "false",
+  "editor.quickSuggestions": false,
   "emmet.syntaxProfiles": {
-    "javascript": "javascriptreact",
+    "javascript": "js",
     "xml": {
         "attr_quotes": "single"
     }
   },
-  "workbench.editor.showTabs": true
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "workbench.editor.showTabs": false,
+  "editor.lineNumbers": "on",
+  "editor.cursorStyle": "line-thin",
+  "editor.matchBrackets": false,
+  "subtleBrackets.styles": { 
+    "global": {
+        "borderColor": "white",
+        "borderWidth": "1px",
+    }
+  },
+  "editor.renderLineHighlight": "none",
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.overviewRulerBorder": false,
+  "editor.fontSize": 18,
+  "workbench.activityBar.visible": false,
+  "vscode_custom_css.imports": [
+    "https://gist.githubusercontent.com/ragingwind/13373878ce6ac4e7635c3a7bb746e2fb/raw/d1082b3292aadf1f633b88656b1b57469bf1f070/vscode_custom.css"
+  ],
+  "vscode_custom_css.policy": true,
 }
