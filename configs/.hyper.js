@@ -33,8 +33,6 @@ module.exports = {
 
     // custom css to embed in the terminal window
     termCSS: `
-      x-screen a {color: red}
-      x-row {font-weight: 200}
     `,
 
     // set to `true` (without backt:qicks) if you're using a Linux setup that doesn't show native menus
@@ -121,7 +119,11 @@ module.exports = {
         fontSize: '12px'
       },
       focusOnMouseHover: false
-    }
+    },
+    // hyperlinks: {
+    //   clickAction: 'open',
+    //   defaultBrowser: false
+    // }
   },
 
   // a list of plugins to fetch and install from npm
@@ -142,7 +144,5 @@ module.exports = {
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
   localPlugins: [],
-  hyperlinks: {
-    defaultBrowser: false
-  }
+
 };
