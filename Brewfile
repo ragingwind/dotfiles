@@ -16,7 +16,8 @@ brew 'coreutils'
 brew 'tree'
 brew 'mas'
 brew 'wget'
-brew 'vim'
+brew 'neovim'
+brew 'unrar'
 
 # utils
 cask 'alfred'
