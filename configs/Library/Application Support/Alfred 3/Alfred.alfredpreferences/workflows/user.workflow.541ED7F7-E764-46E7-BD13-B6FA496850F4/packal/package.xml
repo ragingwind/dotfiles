@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>WebScreenshot</name>
-  <version>1.4.2</version>
-  <bundle>com.vitorgalvao.alfred.webscreenshot</bundle>
-  <updated>1482255436</updated>
-  <file>webscreenshot.alfredworkflow</file>
-</workflow>
