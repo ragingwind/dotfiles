@@ -26,3 +26,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Go
+export GOPATH="$HOME/Go"

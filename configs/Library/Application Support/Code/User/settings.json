@@ -1,5 +1,5 @@
 {
-  "window.zoomLevel": 1,
+  "window.zoomLevel": -1,
   "editor.fontFamily": "Fira Code",
   // "editor.fontFamily": "Source Code Pro",
   "editor.fontWeight": "200",
@@ -24,7 +24,7 @@
   "editor.snippetSuggestions": "top",
   "editor.quickSuggestions": true,
   "editor.acceptSuggestionOnEnter": "on",
-  "editor.quickSuggestionsDelay": 30,
+  "editor.quickSuggestionsDelay": 100,
   "editor.wordBasedSuggestions": false,
   "editor.parameterHints": false,
   "editor.minimap.enabled": false,
@@ -77,7 +77,7 @@
   "workbench.editor.enablePreview": false,
   "workbench.activityBar.visible": false,
   "workbench.statusBar.visible": false,
-  "editor.quickSuggestions": false,
+  "editor.quickSuggestions": true,
   "emmet.syntaxProfiles": {
     "javascript": "js",
     "xml": {
@@ -88,9 +88,9 @@
     "javascript": "javascriptreact"
   },
   "emmet.triggerExpansionOnTab": true,
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": true,
   "editor.lineNumbers": "on",
-  "editor.cursorStyle": "line-thin",
+  "editor.cursorStyle": "line",
   "editor.matchBrackets": false,
   "subtleBrackets.styles": { 
     "global": {
@@ -107,4 +107,12 @@
     "https://gist.githubusercontent.com/ragingwind/13373878ce6ac4e7635c3a7bb746e2fb/raw/d1082b3292aadf1f633b88656b1b57469bf1f070/vscode_custom.css"
   ],
   "vscode_custom_css.policy": true,
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.historyExplorer.enabled": true,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.codeLens.enabled": false,
+  "terminal.integrated.rendererType": "dom",
 }
