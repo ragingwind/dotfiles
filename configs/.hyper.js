@@ -32,8 +32,7 @@ module.exports = {
     css: '',
 
     // custom css to embed in the terminal window
-    termCSS: `
-    `,
+    termCSS: ``,
 
     // set to `true` (without backt:qicks) if you're using a Linux setup that doesn't show native menus
     // default: `false` on Linux, `true` on Windows (ignored on macOS)
@@ -96,53 +95,36 @@ module.exports = {
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
 
-    // for advanced config flags please refer to https://hyper.is/#cfg
     paneNavigation: {
       debug: false,
       hotkeys: {
         navigation: {
-          up: 'command+alt+up',
-          down: 'command+alt+down',
-          left: 'command+alt+left',
-          right: 'command+alt+right'
+          // Disabled to support navigation between tabss
+          // up: 'command+alt+up',
+          // down: 'command+alt+down',
+          // left: 'command+alt+left',
+          // right: 'command+alt+right'
         },
-        jump_prefix: 'command', // completed with 1-9 digits
+        jump_prefix: 'command', // Completed with 1-9 digits
         permutation_modifier: 'shift', // Added to jump and navigation hotkeys for pane permutation
         maximize: 'command+enter'
       },
       showIndicators: true, // Show pane number
-      indicatorPrefix: '', // Will be completed with pane number
+      indicatorPrefix: '^⌥', // Will be completed with pane number
       indicatorStyle: { // Added to indicator <div>
         position: 'absolute',
-        bottom: 0,
-        right: 0,
-        fontSize: '12px'
+        top: 0,
+        left: 0,
+        fontSize: '10px'
       },
-      focusOnMouseHover: false
-    },
-    // hyperlinks: {
-    //   clickAction: 'open',
-    //   defaultBrowser: false
-    // }
+      focusOnMouseHover: false,
+      inactivePaneOpacity: 0.6
+    }
   },
-
-  // a list of plugins to fetch and install from npm
-  // format: [@org/]project[#version]
-  // examples:
-  //   `hyperpower`
-  //   `@company/project`
-  //   `project#1.0.1`
   plugins: [
     "hyper-pane",
-    // "hyperterm-visor",
     "hyperterm-cursor",
     "hyperlinks",
-    // "hyper-snazzy"
   ],
-
-  // in development, you can create a directory under
-  // `~/.hyper_plugins/local/` and include it here
-  // to load it and avoid it being `npm install`ed
-  localPlugins: [],
-
+  localPlugins: []
 };
