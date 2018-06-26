@@ -10,7 +10,7 @@ sh ./bootstrap.sh
 
 # make symlinks for private and mackup as dotstyle
 # ex) ./.dotfiles/zshrc > ~/.zshrc, ./.dotfiles/ssh > ~/.ssh
-sn ~/Google Drive/.dotfiles/* ~/.dotfiles/mackup* $HOME --hidden
+sn ~/Google\ Drive/.dotfiles ~/.dotfiles/mackup* $HOME --hidden
 
 # configure macOS envrionment, system and apps you installed
 sh ./macos.sh
@@ -42,12 +42,12 @@ b. Run `sh bootstrap.sh` to install essential application managers like
   - **essential setting tools** for [making symbolic link](https://www.npmjs.com/package/@moonandyou/symlinks-cli) of dotfiles
   - **brew**, installatioan bundch of macOS at once. **only for macOS**
 
-c. `brew` will applications on macOS. During in period of boostraping, brew will works for installation of macOS applications, via [brew](https://brew.sh/)/[cask](https://caskroom.github.io/), which listed in `~/.dotfiles/Brewfile`, which is a manifest for application list: 
+c. `brew` will applications on macOS. During in period of boostraping, brew will works for installation of macOS applications, via [brew](https://brew.sh/)/[cask](https://caskroom.github.io/), which listed in `~/.dotfiles/Brewfile`, which is a manifest for application list:
   - fonts
   - MAS apps (MAS apps is not in the list because of security issues*)
   - development tools like compilers, runtimes, even IDEs and editors
   - macOS utilities you're used to use
-  
+
 Take a break. It could take so much time by your applications count and sizes in `Brewfile`
 
 d. Run your favorite cloud sync app to sync with your backup data to local,  which allow you be able to retore settings. Google Drive or Dropbox that kind of sync clients must be installed if your dotfiles is on the cloud. *As for me, private dotfiles synced in case of no tracking like ssh, aws files.*
@@ -56,7 +56,7 @@ d. Run your favorite cloud sync app to sync with your backup data to local,  whi
 
 dotfiles restoration consists of two of parts. The first part is that `link private dotfiles` synced with cloud and `.mackup` directory and `.mackup.cfg` at root of user, $HOME. Create symlinks at once by run below command. `sn`, [symlinks-cli](https://www.npmjs.com/package/@moonandyou/symlinks-cli) tool is already installed as bootstraping.
 
-a. `sn ~/Google Drive/.dotfiles/* ~/dotfiles/mackup* $HOME --hidden`
+a. `sn ~/Google\ Drive/.dotfiles ~/.dotfiles/mackup* $HOME --hidden`
 
 `mackup` will be used in the next step to restore all of settings for your application you installed via brew, which is also downloaded by brew, is to keep your application setting in sync not only dotfiles also macOS apps.
 
@@ -71,7 +71,7 @@ a. Instead of manually configuring macOS, using macOS scripts and shell command 
 - System, Shell and Bundled Application like dock, finder, safari, activity monitor, environments, global ui/ux
 - User applications: Chrome, iTerm2 and more
 
-b. After configuring macOS, UI Server and apps will be restarted and you need to restart your system that cause the changes to work well. 
+b. After configuring macOS, UI Server and apps will be restarted and you need to restart your system that cause the changes to work well.
 
 If you're interested in maintain the scripts? you should take a look at the `macos.sh` and every configs you need. And please refer to below links for more information.
 
