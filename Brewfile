@@ -18,6 +18,7 @@ brew 'mas'
 brew 'wget'
 brew 'neovim'
 brew 'unrar'
+brew 'yarn', args:['without-node']
 
 # utils
 cask 'alfred'
@@ -26,7 +27,7 @@ cask 'skype'
 cask 'slack'
 cask 'vlc'
 cask 'webtorrent'
-cask 'screenflow7'
+cask 'screenflow'
 cask 'vysor'
 cask 'kid3'
 cask 'openemu-experimental'
@@ -46,6 +47,7 @@ cask 'hyper'
 cask 'mindnode-pro'
 cask 'notion'
 cask 'there'
+cask 'google-backup-and-sync'
 
 # browsers
 cask 'google-chrome'
@@ -67,6 +69,9 @@ cask 'java'
 cask 'devdogs'
 brew 'go'
 cask 'imageoptim'
+brew 'python3'
+cask 'zeplin'
+cask 'sketch'
 
 # fonts
 cask 'font-source-code-pro'
