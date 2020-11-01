@@ -19,6 +19,7 @@ brew 'wget'
 brew 'neovim'
 brew 'unrar'
 brew 'yarn', args:['without-node']
+brew 'pyenv'
 
 # utils
 cask 'alfred'
