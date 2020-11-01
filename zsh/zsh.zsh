@@ -120,6 +120,10 @@ cd () {
   fi
 }
 
+se() {
+  find . -type f -print | xargs grep -i "$1" /dev/null
+}
+
 # INSTANT SERVER
 pserver() {
   # @todo, set default port
@@ -140,6 +144,10 @@ subl() {
 
 rmpyc() {
   find . -name "*.pyc" -exec rm -rf {} \;
+}
+
+lss() {
+  ls -a $1| sort
 }
 
 # DIFF

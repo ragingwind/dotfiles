@@ -7,3 +7,7 @@ alias screencut30="time ffmpeg -v quiet -y -i $1 -vcodec copy -acodec copy -ss 0
 alias top="top -o cpu"
 alias e="code $1"
 alias vim="nvim $1"
+alias iphone="open -a Simulator"
+alias pixel="~/Library/Android/sdk/emulator/emulator @Pixel_2"
+alias docker-node="docker run -it --entrypoint /bin/sh node:10.16.0"
+alias docker-web="docker run -p 0.0.0.0:8080:3000 -it --entrypoint /bin/sh node:10.16.0"
