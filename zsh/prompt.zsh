@@ -65,4 +65,6 @@ precmd() {
 # Prompt turns red if the previous command didn't exit with 0
 # PROMPT='%(?.%F{magenta}.%F{red})>%f '
 # Can be disabled:
-PROMPT='%F{red}>%f '
+# PROMPT='%F{red}>%f '
+
+source $ZSH/themes/common.zsh-theme
