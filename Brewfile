@@ -49,6 +49,8 @@ cask 'mindnode-pro'
 cask 'notion'
 cask 'there'
 cask 'google-backup-and-sync'
+cask 'choosy'
+cask 'tidal'
 
 # browsers
 cask 'google-chrome'
