@@ -664,6 +664,18 @@
         "options": {
           "full_name": "font-roboto-mono-for-powerline"
         }
+      },
+      "font-victor-mono": {
+        "version": "latest",
+        "options": {
+          "full_name": "font-victor-mono"
+        }
+      },
+      "font-victor-mono-nerd-font": {
+        "version": "2.1.0",
+        "options": {
+          "full_name": "font-victor-mono-nerd-font"
+        }
       }
     },
     "mas": {
