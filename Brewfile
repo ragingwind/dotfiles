@@ -1,9 +1,11 @@
 # tap
-tap 'caskroom/cask'
-tap 'caskroom/versions'
-tap 'caskroom/fonts'
+tap 'homebrew/cask'
+tap 'homebrew/homebrew-core'
+tap 'homebrew/homebrew-bundle'
+tap 'homebrew/cask-fonts'
+tap 'ragingwind/homebrew-cask'
 
-# bin
+# bin 
 brew 'mackup'
 brew 'zsh'
 brew 'zsh-completions'
@@ -18,8 +20,8 @@ brew 'mas'
 brew 'wget'
 brew 'neovim'
 brew 'unrar'
-brew 'yarn', args:['without-node']
 brew 'pyenv'
+brew 'svn'
 
 # utils
 cask 'alfred'
@@ -35,22 +37,23 @@ cask 'openemu-experimental'
 cask 'sip'
 cask 'disk-inventory-x'
 cask 'spotify'
-cask 'microsoft-remote-desktop-beta'
 cask 'typora'
 cask 'avibrazil-rdm'
 cask 'movist'
 cask 'vanilla'
 cask 'kap'
-cask 'zoomus'
-cask 'marp'
+cask 'zoom'
 cask 'kindle'
 cask 'hyper'
-cask 'mindnode-pro'
 cask 'notion'
 cask 'there'
 cask 'google-backup-and-sync'
 cask 'choosy'
 cask 'tidal'
+
+# mas
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "MindNode – Mind Map", id: 1289197285 
 
 # browsers
 cask 'google-chrome'
@@ -59,7 +62,7 @@ cask 'chromium'
 cask 'safari-technology-preview'
 cask 'firefox'
 cask 'firefox-nightly'
-cask 'torbrowser'
+cask 'tor-browser'
 
 # development
 cask 'docker'
@@ -68,7 +71,7 @@ cask 'android-studio'
 cask 'android-file-transfer'
 cask 'visual-studio-code'
 cask 'visual-studio-code-insiders'
-cask 'java'
+brew 'java'
 cask 'devdogs'
 brew 'go'
 cask 'imageoptim'
@@ -87,7 +90,5 @@ cask 'font-fira-mono-for-powerline'
 cask 'font-roboto'
 cask 'font-roboto-mono'
 cask 'font-roboto-slab'
-cask 'font-robotomono-nerd-font-mono'
+cask 'font-roboto-mono-nerd-font'
 cask 'font-roboto-mono-for-powerline'
-cask 'font-robotomono-nerd-font'
-cask 'font-roboto-condensed'
