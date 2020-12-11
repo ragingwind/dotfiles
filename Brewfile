@@ -66,6 +66,7 @@ cask 'tor-browser'
 
 # development
 cask 'docker'
+brew 'docker-compose'
 cask 'iterm2'
 cask 'android-studio'
 cask 'android-file-transfer'
@@ -78,6 +79,7 @@ cask 'imageoptim'
 brew 'python3'
 cask 'zeplin'
 cask 'sketch'
+cask 'cmake'
 
 # fonts
 cask 'font-source-code-pro'

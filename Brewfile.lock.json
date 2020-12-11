@@ -2,16 +2,16 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "3b3b613bec08d6cce3993436d929f4661074994e"
+        "revision": "7fc51d2418632dc16c5edef6531db18709ff9f58"
       },
       "homebrew/core": {
-        "revision": "6b40c0f0911a9298b4b2cf93c80d56bf2f06a353"
+        "revision": "c0f0cfec9a6288b2e4227579e5e50583f3b8f0a7"
       },
       "homebrew/bundle": {
-        "revision": "034459da8e6cd11076c578f0ac067fd50d1b14fa"
+        "revision": "6fa389091d1b7450df0701d6a0d20e862bda6507"
       },
       "homebrew/cask-fonts": {
-        "revision": "86ae21cd8fe9d445d1e1b708ff07c969f3b038ca"
+        "revision": "40b132f111dae71032287dbba323e0d758b003e6"
       },
       "ragingwind/cask": {
         "revision": "e1ef616c1edbdf713ca425d70a17d83ff6e32138"
@@ -332,7 +332,32 @@
           }
         }
       },
-      "python3": null
+      "python3": null,
+      "docker-compose": {
+        "version": "1.27.4_1",
+        "bottle": {
+          "cellar": ":any",
+          "prefix": "/usr/local",
+          "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/docker-compose-1.27.4_1.big_sur.bottle.tar.gz",
+              "sha256": "c577b372471df97876b4783a4b63ba1f13aeb6dbf6884d65cd5fe562b9b9d9f4"
+            },
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/docker-compose-1.27.4_1.catalina.bottle.tar.gz",
+              "sha256": "16253360c909ddeabf7aaaa254f93c6041eddd1eb90a3c1b48bc7f0bbe190fc3"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/docker-compose-1.27.4_1.mojave.bottle.tar.gz",
+              "sha256": "f78859e7f5ae97e0d16ced6885ae0254041bac63d12dfe557f83371149044391"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/docker-compose-1.27.4_1.high_sierra.bottle.tar.gz",
+              "sha256": "41a4fdb093db662f77497e3f190574703a6609c215e34278b121949d5a367aef"
+            }
+          }
+        }
+      }
     },
     "cask": {
       "alfred": {
@@ -676,6 +701,12 @@
         "options": {
           "full_name": "font-victor-mono-nerd-font"
         }
+      },
+      "cmake": {
+        "version": "3.19.1",
+        "options": {
+          "full_name": "cmake"
+        }
       }
     },
     "mas": {
@@ -689,9 +720,9 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.5.12-291-g602f2c4",
+        "HOMEBREW_VERSION": "2.6.0-46-g275227c",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "6b40c0f0911a9298b4b2cf93c80d56bf2f06a353",
+        "Homebrew/homebrew-core": "c0f0cfec9a6288b2e4227579e5e50583f3b8f0a7",
         "CLT": "12.2.0.0.1.1604628099",
         "Xcode": "12.0",
         "macOS": "10.15.7"
