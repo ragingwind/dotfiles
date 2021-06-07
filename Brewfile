@@ -50,6 +50,7 @@ cask 'there'
 cask 'google-backup-and-sync'
 cask 'choosy'
 cask 'tidal'
+cask 'transmission-remote-gui'
 
 # mas
 mas "Microsoft Remote Desktop", id: 1295203466
