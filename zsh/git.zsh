@@ -10,13 +10,13 @@ alias gaa='git add -A .;git commit -a -m '$2''
 alias gpom='git pull origin master'
 alias gs='git status -sb'
 alias gc='git commit'
+alias gcs='git commit -m '$2''
 alias gca='git commit -a -m '$2''
 alias gct='git commit -a -m '$2' --date"$(theday after)"'
 alias gcy='git commit -a -m '$2' --date"$(theday before)"'
 alias gac='git add -A;git commit -a -m '$2''
 alias gch='git checkout'
 alias gb='git branch'
-alias gd='git diff'
 alias greset='git reset --hard HEAD~1'
 alias grv='git remote -v'
 alias gst='git status'
@@ -25,6 +25,8 @@ alias merge-to="!f() { git checkout $1 && echo git merge $2 && echo git checkout
 alias gundo='git reset HEAD@{1}'
 alias gbsort='git branch --sort=-committerdate'
 alias gh-remove='git push origin `git subtree split --prefix out master`:gh-pages --force'
+alias gds='git diff | git-split-diffs --color | less -RFX'
+alias gd='git diff'
 
 git-init() {
     git init

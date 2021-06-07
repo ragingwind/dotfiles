@@ -126,8 +126,7 @@ se() {
 
 # INSTANT SERVER
 pserver() {
-  # @todo, set default port
-  python -m SimpleHTTPServer $2 $1
+  python3 -m http.server
 }
 
 # NODE
@@ -150,6 +149,10 @@ lss() {
   ls -a $1| sort
 }
 
+lsz() {
+	ls -lah $1 | awk '{print $9, $5}' | column -t
+}
+
 # DIFF
 function diff {
     colordiff -u "$@" | less -RF
@@ -170,3 +173,5 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # pasting with tabs doesn't perform completion
 zstyle ':completion:*' insert-tab pending
+
+zmodload zsh/zprof
