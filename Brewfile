@@ -10,7 +10,6 @@ brew 'mackup'
 brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-autosuggestions'
-brew 'zsh-completions'
 brew 'zsh-git-prompt'
 brew 'zsh-syntax-highlighting'
 brew 'tmux'
@@ -19,7 +18,7 @@ brew 'tree'
 brew 'mas'
 brew 'wget'
 brew 'neovim'
-brew 'unrar'
+brew 'unar'
 brew 'pyenv'
 brew 'svn'
 
@@ -54,7 +53,7 @@ cask 'transmission-remote-gui'
 
 # mas
 mas "Microsoft Remote Desktop", id: 1295203466
-mas "MindNode – Mind Map", id: 1289197285 
+mas "MindNode", id: 1289197285 
 
 # browsers
 cask 'google-chrome'
@@ -72,7 +71,6 @@ cask 'iterm2'
 cask 'android-studio'
 cask 'android-file-transfer'
 cask 'visual-studio-code'
-cask 'visual-studio-code-insiders'
 brew 'java'
 cask 'devdogs'
 brew 'go'
@@ -80,7 +78,8 @@ cask 'imageoptim'
 brew 'python3'
 cask 'zeplin'
 cask 'sketch'
-cask 'cmake'
+brew 'cmake'
+brew 'brotli'
 
 # fonts
 cask 'font-source-code-pro'

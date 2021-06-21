@@ -43,6 +43,7 @@ if [ "$(uname -s)" == "Darwin" ]; then
   fi
 
   brew tap homebrew/bundle
+  brew tap homebrew/cask-versions
   brew bundle
 fi
 
