@@ -50,7 +50,7 @@ c. `brew` will applications on macOS. During in period of boostraping, brew will
 
 Take a break. It could take so much time by your applications count and sizes in `Brewfile`
 
-d. Run your favorite cloud sync app to sync with your backup data to local,  which allow you be able to retore settings. Google Drive or Dropbox that kind of sync clients must be installed if your dotfiles is on the cloud. *As for me, private dotfiles synced in case of no tracking like ssh, aws files.*
+d. Run your favorite cloud sync app to sync with your backup data to local,  which allow you be able to retore settings. Google Drive or Dropbox that kind of sync clients must be installed if your dotfiles is on the cloud.
 
 ### 3. Restore settings
 
