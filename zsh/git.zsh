@@ -27,12 +27,13 @@ alias gbsort='git branch --sort=-committerdate'
 alias gh-remove='git push origin `git subtree split --prefix out master`:gh-pages --force'
 alias gds='git diff | git-split-diffs --color | less -RFX'
 alias gd='git diff'
+alias gff='git fetch && git rebase origin/master'
 
 git-init() {
     git init
-    touch README.md
+    echo "# project" >> readme.md
     git add readme.md
-    git commit -m "add readme doc"
+    git commit -m "doc: Add readme doc"
     git remote add origin "$@"
     git push -u origin master
 }
